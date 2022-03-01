@@ -1,4 +1,7 @@
 {
+    "alcaeus/mongo-php-adapter": {
+        "version": "1.2.2"
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -70,6 +73,18 @@
     "doctrine/migrations": {
         "version": "3.4.1"
     },
+    "doctrine/mongodb-odm": {
+        "version": "2.3.1"
+    },
+    "doctrine/mongodb-odm-bundle": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "68562ca89de9f97a952535cd3eee49f5541b76a7"
+        }
+    },
     "doctrine/orm": {
         "version": "2.11.1"
     },
@@ -85,14 +100,14 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "jean85/pretty-package-versions": {
+        "version": "2.0.5"
+    },
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
-    "laminas/laminas-eventmanager": {
-        "version": "3.4.0"
-    },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.4.1"
+    "mongodb/mongodb": {
+        "version": "1.11.0"
     },
     "monolog/monolog": {
         "version": "2.3.5"
