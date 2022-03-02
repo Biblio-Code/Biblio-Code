@@ -1,0 +1,349 @@
+{% extends 'base.html.twig' %}
+
+{% block titulo %} Formulario de Contacto {{ parent() }} {% endblock %}
+{% block stylesheets %}<link href="css/bootstrap.min.css" rel="stylesheet">{% endblock %}
+{% block javascripts %}
+	<!-- Custom styles for this template -->
+	<link href="css/dashboard.css" rel="stylesheet">
+	<link href="css/grid.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="js/datatables/datatables.min.css">
+{% endblock %}
+{% block main %}
+	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">BL Espa&ntilde;a</a>
+	</nav>
+
+	<hr>
+
+	<div class="container-fluid">
+		<div class="row">
+			{#include('menu.php')#}
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h2>Formulario de contacto</h2>
+				<hr>
+				<form role="form" id="register-form" action="{{path("formulario")}}" method="POST">
+
+					<div class="form-body">
+
+						<input type="hidden" value="0" id="id" name="id" />
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+								<input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="apellidos" id="apellidos" type="text" class="form-control" placeholder="Apellidos">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="nif" id="nif" type="text" class="form-control" placeholder="NIF">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="direccion" id="direccion" type="text" class="form-control" placeholder="Dirección">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="codpostal" id="codpostal" type="text" class="form-control" placeholder="Código Postal">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="pais" id="pais" type="text" class="form-control" placeholder="País">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="provincia" id="provincia" type="text" class="form-control" placeholder="Provincia">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="poblacion" id="poblacion" type="text" class="form-control" placeholder="Población">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								<input name="email" id="email" type="text" class="form-control" placeholder="Email">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+
+					</div>
+
+					<div class="form-footer">
+						<button type="submit" class="btn btn-primary">Enviar Datos</button>
+						&nbsp;
+						<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
+					</div>
+
+				</form>
+			</main>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+
+	<!-- Icons -->
+	<script src="icons/feather.min.js"></script>
+	<script>
+		feather.replace()
+	</script>
+
+	<script type="text/javascript" language="javascript" src="js/datatables/datatables.min.js"></script>
+
+	<script>
+		$('document').ready(function() {
+			// PatrÃ³n validaciÃ³n nombre
+			var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
+
+			$.validator.addMethod("validnombre", function(value, element) {
+				return this.optional(element) || nombreregex.test(value);
+			});
+
+			// PatrÃ³n validaciÃ³n apellidos
+			var apellidosregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
+
+			$.validator.addMethod("validapellidos", function(value, element) {
+				return this.optional(element) || apellidosregex.test(value);
+			});
+
+			// PatrÃ³n validaciÃ³n país
+			var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
+
+			$.validator.addMethod("validpais", function(value, element) {
+				return this.optional(element) || paisregex.test(value);
+			});
+
+			// PatrÃ³n validaciÃ³n provincia
+			var provinciaregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
+
+			$.validator.addMethod("validprovincia", function(value, element) {
+				return this.optional(element) || provinciaregex.test(value);
+			});
+
+			// PatrÃ³n validaciÃ³n población
+			var poblacionregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
+
+			$.validator.addMethod("validpoblacion", function(value, element) {
+				return this.optional(element) || poblacionregex.test(value);
+			});
+
+
+			//Patrón validación NIF
+			var nifregex = /(^([0-9]{8,8}\-[A-Z])|^)+$/;
+
+			$.validator.addMethod("validnif", function(value, element) {
+				return this.optional(element) || nifregex.test(value);
+			});
+
+			//Patrón validación dirección
+			var direccionregex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$/;
+
+			$.validator.addMethod("validdireccion", function(value, element) {
+				return this.optional(element) || direccionregex.test(value);
+			});
+
+			//Patrón validación código postal
+			var codpostalregex = /^[0-9]{5,5}$/;
+
+			$.validator.addMethod("validcodpostal", function(value, element) {
+				return this.optional(element) || codpostalregex.test(value);
+			});
+
+			// PatrÃ³n validaciÃ³n email
+			var eregex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+			$.validator.addMethod("validemail", function(value, element) {
+				return this.optional(element) || eregex.test(value);
+			});
+
+			$("#register-form").validate({
+				rules: {
+					nombre: {
+						required: true,
+						validnombre: true
+					},
+					apellidos: {
+						required: true,
+						validapellidos: true
+					},
+					nif: {
+						required: true,
+						validnif: true
+					},
+					direccion: {
+						required: true,
+						validdireccion: true,
+						maxlength: 256
+					},
+					codpostal: {
+						required: true,
+						validcodpostal: true
+					},
+					pais: {
+						required: true,
+						validpais: true
+					},
+					provincia: {
+						required: true,
+						validprovincia: true
+					},
+					poblacion: {
+						required: true,
+						validpoblacion: true
+					},
+					telefono: {
+						required: false,
+						number: true,
+						minlength: 9,
+						maxlength: 9
+					},
+					email: {
+						required: true,
+						validemail: true
+					}
+				},
+				messages: {
+					nombre: {
+						required: "Por favor, indique un nombre.",
+						validnombre: "Solo se permiten letras y espacios en blancos."
+					},
+					apellidos: {
+						required: "Por favor, indique unos apellidos.",
+						validapellidos: "Solo se permiten letras y espacios en blancos."
+					},
+					nif: {
+						required: "Por favor, indique un NIF.",
+						validnif: "Por favor, indique un NIF con esta estructura \"11111111-A\"."
+					},
+					direccion: {
+						required: "Por favor, indique una dirección.",
+						validdireccion: "Por favor, indique una dirección válida.",
+						maxlength: "La dirección es demasiado larga."
+					},
+					codpostal: {
+						required: "Por favor, indique un código postal.",
+						validcodpostal: "Por favor, introduce un código postal válido."
+					},
+					pais: {
+						required: "Por favor, indique un país.",
+						validpais: "Solo se permiten letras y espacios en blancos."
+					},
+					provincia: {
+						required: "Por favor, indique una provincia.",
+						validprovincia: "Solo se permiten letras y espacios en blancos."
+					},
+					poblacion: {
+						required: "Por favor, indique una población.",
+						validpoblacion: "Solo se permiten letras y espacios en blancos."
+					},
+					telefono: {
+						required: "Por favor, indique un teléfono.",
+						number: "Solo se permiten números",
+						minlength: "Solo se permiten 9 números.",
+						maxlength: "Solo se permiten 9 números."
+					},
+					email: {
+						required: "Por favor, indique un email.",
+						validemail: "Por favor, introduce un email válido"
+					}
+				},
+				errorPlacement: function(error, element) {
+					$(element).closest('.form-group').find('.help-block').html(error.html());
+				},
+				highlight: function(element) {
+					$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+				},
+				unhighlight: function(element, errorClass, validClass) {
+					$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+					$(element).closest('.form-group').find('.help-block').html('');
+				},
+				submitHandler: function(form) {
+					form.submit();
+					alert('ok');
+				}
+			});
+		})
+	</script>
+
+
+	<script>
+		feather.replace()
+
+		$('document').ready(function() {
+
+			$('#volver').on('click', function() {
+				document.location.href = 'clientes.php';
+			});
+
+			var idForm = <?php echo isset($_GET["id"]) ? $_GET["id"] : "0"; ?>
+
+			if (idForm > 0) {
+				$.ajax({
+					type: "GET",
+					dataType: "json",
+					url: "services/user/load_cliente.php?id=" + idForm,
+					data: {
+						idForm: idForm
+					},
+					success: function(data) {
+						$('#nombre').val(data["nombre"]);
+						$('#apellidos').val(data["apellidos"]);
+						$("#nif").val(data["nif"]);
+						$('#direccion').val(data["direccion"]);
+						$('#codpostal').val(data["codpostal"]);
+						$('#pais').val(data["pais"]);
+						$('#provincia').val(data["provincia"]);
+						$('#poblacion').val(data["poblacion"]);
+						$('#telefono').val(data["telefono"]);
+						$('#email').val(data["email"]);
+						$('#id').val(data["id"]);
+					},
+					error: function() {
+						alert('Error!');
+					}
+				});
+			}
+		})
+	</script>
+
+{% endblock%}
+

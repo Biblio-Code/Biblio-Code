@@ -7,5 +7,13 @@ kernel:
     type: annotation
 
 create:
-     path: /create
-     controller: App\Controller\TutorialController::createAction
+    path: /create
+    controller: App\Controller\TutorialController::createAction
+
+formulario:
+    path: /formulario
+    controller: App\Controller\ControllerBiblioCode::verFormulario
+
+index:
+    path: /
+    controller: App\Controller\ControllerBiblioCode::verIndex
