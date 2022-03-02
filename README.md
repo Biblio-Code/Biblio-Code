@@ -34,6 +34,8 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 
 ### Que hacer para desplegar la app
 
+Lo primero y muy importante tener ext-mongodb https://www.php.net/manual/es/mongodb.installation.manual.php instalado
+
 1. git clone git@github.com:Biblio-Code/Biblio-Code.git
 2. cd Biblio-Code
 3. crear el env.local y poner cambiar las variables de entorno MONGODB_URL y MONGO_DB
