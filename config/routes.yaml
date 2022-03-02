@@ -1,3 +1,11 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+create:
+     path: /create
+     controller: App\Controller\TutorialController::createAction
