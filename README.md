@@ -30,10 +30,12 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 ### Participantes
 - Alberto Arranz Alé ► [AlbertoArraz](https://github.com/AlbertoArraz)
 - Laura Serrano Ruiz ► [lauraaa96](https://github.com/lauraaa96)
+- Salvador Delgado Bolancé ► [slvdr510](https://github.com/slvdr510)
 
-### Que hacer para usar la app
+### Que hacer para desplegar la app
 
 1. git clone git@github.com:Biblio-Code/Biblio-Code.git
 2. cd Biblio-Code
-3. composer install
-4. symfony server:start
+3. crear el env.local y poner cambiar las variables de entorno MONGODB_URL y MONGO_DB
+4. composer install
+5. symfony server:start
