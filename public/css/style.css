@@ -1,0 +1,138 @@
+/* cabecera */
+
+header {
+    width: 100%;
+    overflow: hidden;
+    
+}
+#cabecera {
+    background-color: black;
+    color: white;
+    overflow: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .logo {
+    float: left;
+  }
+  /* ~~ Top Navigation Bar ~~ */
+  
+  
+  .navigation-bar {
+    height: 70px;
+  }
+  .navigation-bar img{
+  float:left;
+  }
+
+  .navigation-bar ul {
+    padding: 0px;
+    margin: -75px 12%;
+    display:inline-block;
+    vertical-align:top;
+  }
+  
+  .navigation-bar li {
+    list-style-type: none;
+    padding: 0px;
+    display: inline;
+  }
+  
+  .navigation-bar li a {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 5px 15px;
+    opacity: 0.7;
+  }
+  
+/* Nav */
+
+nav {
+    background-color: lightgray;
+    padding: 2px 2px 2px 10px;
+}
+
+button {
+    float: right;
+    
+    direction: rtl;
+}
+
+.derecha {
+    float: right;
+    margin-right: 5px;
+    height: 20px;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+/* Section */
+
+section, nav {
+    margin: 5%;
+}
+ h4 {
+     color: white !important;
+     background-color: black;
+     text-align: center;
+ }
+
+.bloque  {
+    display: inline-block;
+}
+
+input, select {
+    height: 25px;
+    width: 200px;
+}
+
+.boton {
+    height: auto;
+    width: auto;
+}
+
+.busquedaVia {
+    width: 150px;
+    display: inline-block;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin: auto auto auto 10px;
+}
+
+/* Propiedad flex-direction en el apartado Autoliquidación*/
+
+
+.row {
+    display: flex;
+    justify-content: left;
+  }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+/* Footer */
+
+footer {
+    color: gray;
+    text-align: center;
+    background-color: black;
+    padding: 0.5%;
+}
+.navegacionFooter {
+    text-decoration: none;
+}
