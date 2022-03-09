@@ -1,0 +1,22 @@
+{% block titulo %} Editando Tutorial {{ parent() }} {% endblock %}
+{% block stylesheets %}{% endblock %}
+{% block main %}
+    <div class="container-fluid px-4">
+        <!-- >>>> REQUIERE DE CAMBIOS <<<< Nombre del Tutorial fetched del Mongodb atlas -->
+        <h1 class="mt-4">Tutorial</h1>
+        <ol class="breadcrumb mb-4">
+            <!-- >>>> REQUIERE DE CAMBIOS <<<< El siguiente campo no se si asignarlo a una ruta 
+            o a un comentario del tutorial, el caso es que está a libre eleccion -->
+            <li class="breadcrumb-item active">Ruta</li>
+        </ol>
+        <div class="form-group">
+            <textarea class="form-control rounded-0" id="documento" rows="20"></textarea>
+        </div>
+        <div class="mt-3">
+            <div class="form-footer">
+            <button type="submit" class="btn btn-success">Guardar cambios</button> &nbsp;
+            <button type="button" id="volver" name="volver" class="btn btn-danger">Cancelar</button>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}{% endblock %}
