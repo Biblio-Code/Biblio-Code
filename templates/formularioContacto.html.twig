@@ -5,149 +5,149 @@
 	{{ parent() }}
 {% endblock %}
 {% block stylesheets %}
-<link href={{ asset('css/bootstrap.min.css')}} rel="stylesheet">
+	<link
+	href={{ asset('css/bootstrap.min.css')}} rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href={{ asset('css/dashboard.css')}} rel="stylesheet">
 	<link href={{ asset('css/grid.css')}} rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href={{ asset('js/datatables/datatables.min.css')}}>
 {% endblock %}
 {% block main %}
-<hr>
-<div class="container-fluid">
-	<div
-		class="row">
-		{#include('menu.php')#}
+	<hr>
+	<div class="container-fluid">
+		<div
+			class="row">
+			{#include('menu.php')#}
 
-		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-			<h2>Formulario de contacto</h2>
-			<hr>
-			<form role="form" id="register-form" action="{{path("formulario")}}" method="POST">
-
-				<div class="form-body">
-
-					<input type="hidden" value="0" id="id" name="id"/>
-
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-user"></span>
-							</div>
-							<input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="apellidos" id="apellidos" type="text" class="form-control" placeholder="Apellidos">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="nif" id="nif" type="text" class="form-control" placeholder="NIF">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="direccion" id="direccion" type="text" class="form-control" placeholder="Dirección">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="codpostal" id="codpostal" type="text" class="form-control" placeholder="Código Postal">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="pais" id="pais" type="text" class="form-control" placeholder="País">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="provincia" id="provincia" type="text" class="form-control" placeholder="Provincia">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="poblacion" id="poblacion" type="text" class="form-control" placeholder="Población">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
-							</div>
-							<input name="email" id="email" type="text" class="form-control" placeholder="Email">
-						</div>
-						<span class="help-block" id="error"></span>
-					</div>
-
-				</div>
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h2>Formulario de contacto</h2>
 				<hr>
-				<div class="form-footer">
-					<button type="submit" class="btn btn-primary">Enviar Datos</button>
-					&nbsp;
-					<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
-				</div>
+				<form role="form" id="register-form" action="{{path("formulario")}}" method="POST">
 
-			</form>
-		</main>
+					<div class="form-body">
+
+						<input type="hidden" value="0" id="id" name="id"/>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-user"></span>
+								</div>
+								<input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="apellidos" id="apellidos" type="text" class="form-control" placeholder="Apellidos">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="nif" id="nif" type="text" class="form-control" placeholder="NIF">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="direccion" id="direccion" type="text" class="form-control" placeholder="Dirección">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="codpostal" id="codpostal" type="text" class="form-control" placeholder="Código Postal">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="pais" id="pais" type="text" class="form-control" placeholder="País">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="provincia" id="provincia" type="text" class="form-control" placeholder="Provincia">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="poblacion" id="poblacion" type="text" class="form-control" placeholder="Población">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<input name="email" id="email" type="text" class="form-control" placeholder="Email">
+							</div>
+							<span class="help-block" id="error"></span>
+						</div>
+
+					</div>
+					<hr>
+					<div class="form-footer">
+						<button type="submit" class="btn btn-primary">Enviar Datos</button>
+						&nbsp;
+						<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
+					</div>
+
+				</form>
+			</main>
+		</div>
 	</div>
-</div>
 {% endblock %}
 {% block javascripts %}
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src={{ asset('js/jquery-3.3.1.min.js')}}></script>
-<script src={{ asset('js/bootstrap.min.js')}}></script>
-<script src={{ asset('js/jquery.validate.min.js')}}></script>
+	<!-- Bootstrap core JavaScript
+	    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
+	<script src={{ asset('js/bootstrap.min.js')}}></script>
+	<script src={{ asset('js/jquery.validate.min.js')}}></script>
 
-<!-- Icons -->
-<script src={{ asset('icons/feather.min.js')}}></script>
-<script>
-	feather.replace()
-</script>
-<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
-<script>
-	$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
+	<!-- Icons -->
+	<script src={{ asset('icons/feather.min.js')}}></script>
+	<script>
+		feather.replace()
+	</script>
+	<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
+	<script>
+		$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
 var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validnombre", function (value, element) {
@@ -318,9 +318,9 @@ alert('ok');
 }
 });
 })
-</script>
-<script>
-	feather.replace()
+	</script>
+	<script>
+		feather.replace()
 
 $('document').ready(function () {
 
@@ -328,16 +328,11 @@ $('#volver').on('click', function () {
 document.location.href = 'clientes.php';
 });
 
-var idForm = <?php echo isset($_GET["id"]) ? $_GET["id"] : "0"; ?>
 
-if (idForm > 0) {
 $.ajax({
 type: "GET",
 dataType: "json",
-url: "services/user/load_cliente.php?id=" + idForm,
-data: {
-idForm: idForm
-},
+
 success: function (data) {
 $('#nombre').val(data["nombre"]);
 $('#apellidos').val(data["apellidos"]);
@@ -351,11 +346,8 @@ $('#telefono').val(data["telefono"]);
 $('#email').val(data["email"]);
 $('#id').val(data["id"]);
 },
-error: function () {
-alert('Error!');
-}
 });
 }
-})
-</script>
+)
+	</script>
 {% endblock %}
