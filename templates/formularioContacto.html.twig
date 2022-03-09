@@ -1,23 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block titulo %} Formulario de Contacto {{ parent() }} {% endblock %}
-{% block stylesheets %}<link href="css/bootstrap.min.css" rel="stylesheet">{% endblock %}
-{% block javascripts %}
+{% block stylesheets %}
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+		
 	<!-- Custom styles for this template -->
 	<link href="css/dashboard.css" rel="stylesheet">
 	<link href="css/grid.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="js/datatables/datatables.min.css">
+
 {% endblock %}
 {% block main %}
-	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">BL Espa&ntilde;a</a>
-	</nav>
-
-	<hr>
-
-	<div class="container-fluid">
-		<div class="row">
+	<div class="row">
 			{#include('menu.php')#}
 
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -114,6 +109,10 @@
 		</div>
 	</div>
 
+{% endblock %}
+
+{% block javascripts %}
+	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -131,35 +130,35 @@
 
 	<script>
 		$('document').ready(function() {
-			// PatrÃ³n validaciÃ³n nombre
+			// Patron validacion nombre
 			var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 			$.validator.addMethod("validnombre", function(value, element) {
 				return this.optional(element) || nombreregex.test(value);
 			});
 
-			// PatrÃ³n validaciÃ³n apellidos
+			// Patron validacion apellidos
 			var apellidosregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 			$.validator.addMethod("validapellidos", function(value, element) {
 				return this.optional(element) || apellidosregex.test(value);
 			});
 
-			// PatrÃ³n validaciÃ³n país
+			// Patron validacion pais
 			var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 			$.validator.addMethod("validpais", function(value, element) {
 				return this.optional(element) || paisregex.test(value);
 			});
 
-			// PatrÃ³n validaciÃ³n provincia
+			// Patron validacion provincia
 			var provinciaregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 			$.validator.addMethod("validprovincia", function(value, element) {
 				return this.optional(element) || provinciaregex.test(value);
 			});
 
-			// PatrÃ³n validaciÃ³n población
+			// Patron validacion población
 			var poblacionregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 			$.validator.addMethod("validpoblacion", function(value, element) {
@@ -174,21 +173,21 @@
 				return this.optional(element) || nifregex.test(value);
 			});
 
-			//Patrón validación dirección
+			//Patrón validación direccion
 			var direccionregex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$/;
 
 			$.validator.addMethod("validdireccion", function(value, element) {
 				return this.optional(element) || direccionregex.test(value);
 			});
 
-			//Patrón validación código postal
+			//Patrón validación codigo postal
 			var codpostalregex = /^[0-9]{5,5}$/;
 
 			$.validator.addMethod("validcodpostal", function(value, element) {
 				return this.optional(element) || codpostalregex.test(value);
 			});
 
-			// PatrÃ³n validaciÃ³n email
+			// Patron validacion email
 			var eregex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 			$.validator.addMethod("validemail", function(value, element) {
@@ -345,5 +344,5 @@
 		})
 	</script>
 
-{% endblock%}
+{% endblock %}
 
