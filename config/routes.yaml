@@ -6,10 +6,6 @@ kernel:
     resource: ../src/Kernel.php
     type: annotation
 
-create:
-    path: /create
-    controller: App\Controller\TutorialController::createAction
-
 formulario:
     path: /formulario
     controller: App\Controller\ControllerBiblioCode::verFormulario
@@ -17,3 +13,22 @@ formulario:
 index:
     path: /
     controller: App\Controller\ControllerBiblioCode::verIndex
+
+create:
+    path: /create
+    controller: App\Controller\TutorialController::createAction
+
+getTutorial:
+    path: /api/tutorial/{id}
+    controller: App\Controller\TutorialController::getTutorial
+    methods: ["GET"]
+
+getAllTutorial:
+    path: /api/tutorial
+    controller: App\Controller\TutorialController::getAllTutorial
+    methods: ["GET"]
+
+postTutorial:
+    path: /api/tutorial/
+    controller: App\Controller\TutorialController::postTutorial
+    methods: ["POST"]

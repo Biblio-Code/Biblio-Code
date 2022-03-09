@@ -22,7 +22,17 @@ class Tutorial
     /**
      * @MongoDB\Field(type="string")
      */
-    protected $cuerpo;
+    protected $codigo;
+
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $texto;
+
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $lenguaje;
 
     public function getId()
     {
@@ -41,14 +51,38 @@ class Tutorial
         return $this;
     }
 
-    public function getCuerpo(): ?string
+    public function getCodigo(): ?string
     {
-        return $this->cuerpo;
+        return $this->codigo;
     }
 
-    public function setCuerpo(string $cuerpo): self
+    public function setCodigo(string $codigo): self
     {
-        $this->cuerpo = $cuerpo;
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    public function getTexto(): ?string
+    {
+        return $this->texto;
+    }
+
+    public function setTexto(string $texto): self
+    {
+        $this->texto = $texto;
+
+        return $this;
+    }
+
+    public function getLenguaje(): ?string
+    {
+        return $this->lenguaje;
+    }
+
+    public function setLenguaje(string $lenguaje): self
+    {
+        $this->lenguaje = $lenguaje;
 
         return $this;
     }
