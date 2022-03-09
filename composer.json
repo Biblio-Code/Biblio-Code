@@ -1,7 +1,7 @@
 {
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=8.0.2",
@@ -9,6 +9,8 @@
         "ext-iconv": "*",
         "alcaeus/mongo-php-adapter": "^1.2",
         "doctrine/mongodb-odm-bundle": "^4.4",
+        "hwi/oauth-bundle": "*",
+        "php-http/guzzle6-adapter": "^2.0",
         "symfony/asset": "6.0.*",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
@@ -73,5 +75,10 @@
             "allow-contrib": "true",
             "require": "6.0.*"
         }
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.38",
+        "symfony/stopwatch": "6.0.*",
+        "symfony/web-profiler-bundle": "6.0.*"
     }
 }
