@@ -10,8 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ComunidadController extends AbstractController
 {
-    public function createAction(DocumentManager $dm)
+    function verComunidad()
     {
+         return $this->render('index.html.twig'); 
 
     }
 }
