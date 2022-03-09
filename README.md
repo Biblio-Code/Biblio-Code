@@ -17,7 +17,7 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 ## Requisitos Despliegue de Aplicaciones Web
 
 - [ ] __RA4__: Transferencia de archivos. Subir código fuente a __Heroku__
-- [ ] __RA5__: Parámetros de configuración. Configurar variables necesarias: __URI__ de base datos, ...
+- [X] __RA5__: Parámetros de configuración. Configurar variables necesarias: __URI__ de base datos, ...
 - [ ] __RA6__: Documentación y control de versiones con __Git__. Desarrollo con __Markdown__ de README.md 
 
 ## Requisitos Empresa e Iniciativa Emprendedora
@@ -26,6 +26,13 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 - [X] __RA2__: Análisis del entorno de una actividad. (Fase II Del proyecto de empresa)
 - [X] __RA3__: Puesta en marcha de una empresa. Determinación del mercado, elementos de marketing, forma jurídica y obligaciones legales (Fase lV y V del plan de empresa) 
 - [ ] __RA4__: Gestión administrativa y económica-financiera (fase VI del proyecto de empresa). 
+
+## Requisitos Diseño de Interfaces Web
+
+- [ ] __RA1__: Diseño de la web
+- [X] __RA2__: Crear un logo para la web
+- [X] __RA3__: Crear una licencia Creative Commons para la web y el logo
+- [ ] __RA4__: Usar imágenes/logos cuyas licencias lo permitan. (Tendréis que facilitarme un archivo que incluya todas las imágenes usadas junto con la URL de origen)
 
 ### Participantes
 - Alberto Arranz Alé ► [AlbertoArraz](https://github.com/AlbertoArraz)
