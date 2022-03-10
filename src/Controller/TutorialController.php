@@ -18,7 +18,7 @@ class TutorialController extends AbstractController
         $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
 
         if (!$tutorial) {
-            throw $this->createNotFoundException('No product found for id ' . $id);
+            throw $this->createNotFoundException('No tutorial found for id ' . $id);
         }
 
         $result = new \stdClass();
