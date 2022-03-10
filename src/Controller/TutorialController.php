@@ -5,6 +5,7 @@ namespace App\Controller;
 // /src/Controller/TutorialController.php
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Document\Tutorial;
+use App\Document\Comunidad;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

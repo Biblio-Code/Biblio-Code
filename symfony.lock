@@ -86,6 +86,9 @@
     "doctrine/orm": {
         "version": "2.11.2"
     },
+    "doctrine/orm": {
+        "version": "2.11.2"
+    },
     "doctrine/persistence": {
         "version": "2.3.0"
     },
