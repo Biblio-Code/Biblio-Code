@@ -14,10 +14,6 @@ index:
     path: /
     controller: App\Controller\ControllerBiblioCode::verIndex
 
-create:
-    path: /create
-    controller: App\Controller\TutorialController::createAction
-
 getTutorial:
     path: /api/tutorial/{id}
     controller: App\Controller\TutorialController::getTutorial
