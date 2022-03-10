@@ -4,20 +4,18 @@ namespace App\Controller;
 
 // /src/Controller/TutorialController.php
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Document\Tutorial;
-use App\Document\Comunidad;
-use Doctrine\ODM\MongoDB\DocumentManager;
+use App\Entity\Tutorial;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Doctrine\Persistence\ManagerRegistry;
 // ...
 
 class TutorialController extends AbstractController
 {
-    public function getTutorial(DocumentManager $dm, $id)
+    public function getTutorial(ManagerRegistry $doctrine, $id)
     {
-        $tutorial = $dm->getRepository(Tutorial::class)->find($id);
+        $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
 
         if (!$tutorial) {
             throw $this->createNotFoundException('No product found for id ' . $id);
@@ -27,14 +25,14 @@ class TutorialController extends AbstractController
         $result->id = $tutorial->getId();
         $result->titulo = $tutorial->getTitulo();
         $result->codigo = $tutorial->getCodigo();
-        $result->texto = $tutorial->getTexto();
+        $result->texto = $tutorial->getTextoTutorial();
 
         return new JsonResponse($result);
     }
 
-    public function getAllTutorial(DocumentManager $dm)
+    public function getAllTutorial(ManagerRegistry $doctrine)
     {
-        $tutoriales = $dm->getRepository(Tutorial::class)->findAll();
+        $tutoriales = $doctrine->getRepository(Tutorial::class)->findAll();
 
         if (!$tutoriales) {
             throw $this->createNotFoundException('No Tutorial found');
@@ -57,15 +55,16 @@ class TutorialController extends AbstractController
         return new JsonResponse($results);
     }
 
-    public function postTutorial(DocumentManager $dm, Request $request)
+    public function postTutorial(ManagerRegistry $doctrine,Request $request)
     {
+        $entityManager = $doctrine->getManager();
         $tutorial = new Tutorial();
         $tutorial->setTitulo($request->request->get("titulo"));
-        $tutorial->setTexto($request->request->get("texto"));
+        $tutorial->setTextoTutorial($request->request->get("texto"));
         $tutorial->setCodigo($request->request->get("codigo"));
         $tutorial->setLenguaje($request->request->get("lenguaje"));
-        $dm->persist($tutorial);
-        $dm->flush();
+        $entityManager->persist($tutorial);
+        $entityManager->flush();
         $result = new \stdClass();
         $result->id = $tutorial->getId();
         $result->titulo = $tutorial->getTitulo();
@@ -75,9 +74,10 @@ class TutorialController extends AbstractController
         return new JsonResponse($result, 201);
     }
 
-    function putTutorial(DocumentManager $dm, Request $request, $id)
+    function putTutorial(ManagerRegistry $doctrine, Request $request, $id)
     {
-        $tutorial = $dm->getRepository(Tutorial::class)->find($id);
+        $entityManager = $doctrine->getManager();
+        $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
         if ($tutorial == null) {
             return new JsonResponse([
                 'error' => 'Tutorial not found'
@@ -85,29 +85,30 @@ class TutorialController extends AbstractController
         }
         $tutorial->setTitulo($request->request->get("titulo"));
         $tutorial->setLenguaje($request->request->get("lenguaje"));
-        $tutorial->setTexto($request->request->get("texto"));
+        $tutorial->setTextoTutorial($request->request->get("texto"));
         $tutorial->setCodigo($request->request->get("codigo"));
-        $dm->flush();
+        $entityManager->flush();
         $result = new \stdClass();
         $result->id = $tutorial->getId();
         $result->titulo = $tutorial->getTitulo();
         $result->lenguaje = $tutorial->getLenguaje();
-        $result->texto = $tutorial->getTexto();
+        $result->texto = $tutorial->getTextoTutorial();
         $result->codigo = $tutorial->getCodigo();
         return new JsonResponse($result);
     }
 
-    function deleteTutorial(DocumentManager $dm, Request $request, $id)
+    function deleteTutorial(ManagerRegistry $doctrine, $id)
   {
-    $tutorial = $dm->getRepository(Tutorial::class)->find($id);
+    $entityManager = $doctrine->getManager();
+    $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
     if ($tutorial == null) {
       return new JsonResponse([
         'error' => 'Tutorial not found'
       ], 404);
     }
 
-    $dm->remove($tutorial);
-    $dm->flush();
+    $entityManager->remove($tutorial);
+    $entityManager->flush();
 
     // Devuelve una respuesta vacia
     return new JsonResponse(null, 204);

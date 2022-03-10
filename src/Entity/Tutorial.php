@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\TutorialTestRepository;
+use App\Repository\TutorialRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TutorialTestRepository::class)
+ * @ORM\Entity(repositoryClass=TutorialRepository::class)
  */
 class Tutorial
 {
@@ -25,7 +25,7 @@ class Tutorial
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $lenguage;
+    private $lenguaje;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -54,14 +54,14 @@ class Tutorial
         return $this;
     }
 
-    public function getLenguage(): ?string
+    public function getLenguaje(): ?string
     {
-        return $this->lenguage;
+        return $this->lenguaje;
     }
 
-    public function setLenguage(string $lenguage): self
+    public function setLenguaje(string $lenguaje): self
     {
-        $this->lenguage = $lenguage;
+        $this->lenguaje = $lenguaje;
 
         return $this;
     }
