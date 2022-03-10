@@ -1099,6 +1099,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/migrations/zipball/e7df670aa9565b435ffec636cebdb4d0a1987f10",
                 "reference": "e7df670aa9565b435ffec636cebdb4d0a1987f10",
+
                 "shasum": ""
             },
             "require": {
