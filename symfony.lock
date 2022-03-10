@@ -86,9 +86,6 @@
     "doctrine/orm": {
         "version": "2.11.2"
     },
-    "doctrine/orm": {
-        "version": "2.11.2"
-    },
     "doctrine/persistence": {
         "version": "2.3.0"
     },
@@ -161,6 +158,18 @@
     },
     "ralouphie/getallheaders": {
         "version": "3.0.3"
+    },
+    "symfony/apache-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "9d254a22efca7264203eea98b866f16f944b2f09"
+        },
+        "files": [
+            "public/.htaccess"
+        ]
     },
     "symfony/asset": {
         "version": "v6.0.3"

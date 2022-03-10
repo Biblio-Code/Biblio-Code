@@ -9,10 +9,12 @@
         "ext-iconv": "*",
         "alcaeus/mongo-php-adapter": "^1.2",
         "doctrine/doctrine-bundle": "^2.5",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
         "hwi/oauth-bundle": "*",
         "php-http/guzzle6-adapter": "^2.0",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.0.*",
         "symfony/console": "6.0.*",
         "symfony/doctrine-bridge": "6.0.*",
@@ -23,12 +25,11 @@
         "symfony/proxy-manager-bridge": "6.0.*",
         "symfony/runtime": "6.0.*",
         "symfony/security-bundle": "6.0.*",
+        "symfony/stopwatch": "6.0.*",
         "symfony/twig-bundle": "6.0.*",
         "symfony/validator": "6.0.*",
         "symfony/web-profiler-bundle": "6.0.*",
-        "symfony/yaml": "6.0.*",
-        "doctrine/doctrine-fixtures-bundle": "^3.4",
-        "symfony/stopwatch": "6.0.*"
+        "symfony/yaml": "6.0.*"
     },
     "config": {
         "allow-plugins": {
@@ -83,8 +84,5 @@
             "allow-contrib": "true",
             "require": "6.0.*"
         }
-    },
-    "require-dev": {
-        
     }
 }
