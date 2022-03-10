@@ -7,7 +7,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 /**
  * @MongoDB\Document
  */
-class Comunidad
+class Provincia
 {
     /**
      * @MongoDB\Id
@@ -22,7 +22,12 @@ class Comunidad
     /**
      * @MongoDB\Field(type="string")
      */
-    protected $nombre;
+    protected $provincia;
+
+    /**
+     * @MongoDB\Field(type="id")
+     */
+    protected $comunidad_id;
 
     /**
      * @MongoDB\Field(type="id")
@@ -39,33 +44,19 @@ class Comunidad
         return $this->slug;
     }
 
-    public function getNombre(): ?string
+    public function getProvincia(): ?string
     {
-        return $this->nombre;
+        return $this->provincia;
+    }
+
+    public function getComunidad_id(): ?int
+    {
+        return $this->comunidad_id;
     }
 
     public function getCapital_id(): ?int
     {
         return $this->capital_id;
-    }
-
-
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-        return $this;
-    }
-
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-        return $this;
-    }
-
-    public function setCapital_id($capital_id)
-    {
-        $this->capital_id= $capital_id;
-        return $this;
     }
 
 

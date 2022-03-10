@@ -3,13 +3,16 @@ namespace App\Controller;
 use App\Entity\Tutorial;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Doctrine\ODM\MongoDB\DocumentManager;
 
 class ControllerBiblioCode extends AbstractController
 {
 //VER NOTICIA
-    function verFormulario()
+
+    function verFormulario(DocumentManager $dm)
     {
-         return $this->render('formularioContacto.html.twig'); 
+         $comunidades = $dm->getRepository(Comunidad::class)->findAll();
+         return $this->render('formularioContacto.html.twig',['comunidades' => $comunidades]); 
 
     }
 
@@ -21,4 +24,3 @@ class ControllerBiblioCode extends AbstractController
 
 }
 
-?>

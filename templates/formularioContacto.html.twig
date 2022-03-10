@@ -91,11 +91,34 @@
 								<label>Comunidad</label>
 								<select name="comunidad" onchange="actualizaProvincias(this.value)">
 									<option value="">Seleccione...</option>
-									{{ db.comunidades.find({})
+								{# 	{{path('comunidad')
         							while (comunidad = resultado->fetch()) {
+									
             						echo '<option value="{{comunidad['id']}}"> {{comunidad['comunidad']}}</option>'
-        							}}}
-
+        							}}} #}
+									{% for comunidad in comunidades %}
+										<option value="">{{dump(comunidad)}}</option>
+									{% endfor %}
+									</select>
+								</div>
+								<span class="help-block" id="error"></span>
+							</div>
+							<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<label>Provincia</label>
+								<select name="provincia" onchange="actualizaMunicipio(this.value)">
+									<option value="">Seleccione...</option>
+								{#{{path('provincia')}}
+    								while ($provincia = $consulta->fetch()) {
+       							 echo '<option value="' . $provincia['id'] . '">' . $provincia['provincia'] . '</option>';
+    							} #}
+									{% for comunidad in comunidades %}
+										<option value="
+										">{{dump(comunidad)}}</option>
+									{% endfor %}
 								</div>
 								<span class="help-block" id="error"></span>
 							</div>
