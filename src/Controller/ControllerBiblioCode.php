@@ -14,13 +14,11 @@ class ControllerBiblioCode extends AbstractController
          $comunidades = $dm->getRepository(Comunidad::class)->findAll();
          return $this->render('formularioContacto.html.twig',['comunidades' => $comunidades]); 
 
+     }
+
+     function verIndex()
+     {
+          return $this->render('index.html.twig'); 
     }
-
-    function verIndex()
-    {
-         return $this->render('index.html.twig'); 
-
-    }
-
 }
 

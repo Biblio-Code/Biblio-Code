@@ -75,7 +75,7 @@
         "version": "2.0.4"
     },
     "doctrine/instantiator": {
-        "version": "1.4.0"
+        "version": "1.4.1"
     },
     "doctrine/lexer": {
         "version": "1.2.3"
@@ -83,21 +83,8 @@
     "doctrine/migrations": {
         "version": "3.4.1"
     },
-    "doctrine/mongodb-odm": {
-        "version": "2.3.1"
-    },
-    "doctrine/mongodb-odm-bundle": {
-        "version": "4.4",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "4.1",
-            "ref": "68562ca89de9f97a952535cd3eee49f5541b76a7"
-        },
-        "files": [
-            "config/packages/doctrine_mongodb.yaml",
-            "src/Document/.gitignore"
-        ]
+    "doctrine/orm": {
+        "version": "2.11.2"
     },
     "doctrine/orm": {
         "version": "2.11.2"
@@ -109,7 +96,7 @@
         "version": "1.1.2"
     },
     "friendsofphp/proxy-manager-lts": {
-        "version": "v1.0.6"
+        "version": "v1.0.7"
     },
     "guzzlehttp/guzzle": {
         "version": "6.5.5"
@@ -206,7 +193,7 @@
         "version": "v3.0.0"
     },
     "symfony/doctrine-bridge": {
-        "version": "v6.0.5"
+        "version": "v6.0.6"
     },
     "symfony/dotenv": {
         "version": "v6.0.5"
@@ -310,6 +297,9 @@
     },
     "symfony/property-info": {
         "version": "v6.0.3"
+    },
+    "symfony/proxy-manager-bridge": {
+        "version": "v6.0.6"
     },
     "symfony/routing": {
         "version": "6.0",
