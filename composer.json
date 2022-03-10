@@ -8,6 +8,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "alcaeus/mongo-php-adapter": "^1.2",
+        "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/mongodb-odm-bundle": "^4.4",
         "hwi/oauth-bundle": "*",
         "php-http/guzzle6-adapter": "^2.0",
