@@ -29,6 +29,16 @@ getAllTutorial:
     methods: ["GET"]
 
 postTutorial:
-    path: /api/tutorial/
+    path: /api/tutorial
     controller: App\Controller\TutorialController::postTutorial
     methods: ["POST"]
+
+putTutorial:
+    path: /api/tutorial/{id}
+    controller: App\Controller\TutorialController::putTutorial
+    methods: ["PUT"]
+
+deleteTutorial:
+    path: /api/tutorial/{id}
+    controller: App\Controller\TutorialController::deleteTutorial
+    methods: ["DELETE"]
