@@ -2,27 +2,39 @@
 
 namespace App\Entity;
 
-use App\Repository\TutorialRepository;
+use App\Repository\TutorialTestRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TutorialRepository::class)]
+/**
+ * @ORM\Entity(repositoryClass=TutorialTestRepository::class)
+ */
 class Tutorial
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $titulo;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $lenguaje;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lenguage;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $codigo;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $textoTutorial;
 
     public function getId(): ?int
@@ -42,14 +54,14 @@ class Tutorial
         return $this;
     }
 
-    public function getLenguaje(): ?string
+    public function getLenguage(): ?string
     {
-        return $this->lenguaje;
+        return $this->lenguage;
     }
 
-    public function setLenguaje(string $lenguaje): self
+    public function setLenguage(string $lenguage): self
     {
-        $this->lenguaje = $lenguaje;
+        $this->lenguage = $lenguage;
 
         return $this;
     }
