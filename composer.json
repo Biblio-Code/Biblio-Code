@@ -26,7 +26,9 @@
         "symfony/twig-bundle": "6.0.*",
         "symfony/validator": "6.0.*",
         "symfony/web-profiler-bundle": "6.0.*",
-        "symfony/yaml": "6.0.*"
+        "symfony/yaml": "6.0.*",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "symfony/stopwatch": "6.0.*"
     },
     "config": {
         "allow-plugins": {
@@ -83,7 +85,6 @@
         }
     },
     "require-dev": {
-        "doctrine/doctrine-fixtures-bundle": "^3.4",
-        "symfony/stopwatch": "6.0.*"
+        
     }
 }
