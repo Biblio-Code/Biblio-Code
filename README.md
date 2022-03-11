@@ -1,6 +1,12 @@
 # Biblio-Code
 Proyecto de Dwes - Dwec - Interfaces - Empresa
 
+## Introducción
+Este es un proyecto realizado en IES Luis Vélez de Guevara de Écija realizado por tres alumnos de 2ºDAW. Consiste en realizar una página web para la visualización de distintos tutotiales de lenguajes de programación, además dispone la funcionalidad de implementar tus propios tutoriales a la página iniciando sesión con google.
+
+## Tecnología utilizadas
+Las tecnolgias utilizadas para la realización de este proyecto son symfony, php, javascript, bootstrap y css.
+
 ## Requisitos Desarrollo en el Entorno Servidor
 
 - [X] __RA5__: Implementado con Symfony
@@ -16,9 +22,9 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 
 ## Requisitos Despliegue de Aplicaciones Web
 
-- [ ] __RA4__: Transferencia de archivos. Subir código fuente a __Heroku__
+- [X] __RA4__: Transferencia de archivos. Subir código fuente a __Heroku__
 - [X] __RA5__: Parámetros de configuración. Configurar variables necesarias: __URI__ de base datos, ...
-- [ ] __RA6__: Documentación y control de versiones con __Git__. Desarrollo con __Markdown__ de README.md 
+- [X] __RA6__: Documentación y control de versiones con __Git__. Desarrollo con __Markdown__ de README.md 
 
 ## Requisitos Empresa e Iniciativa Emprendedora
 
@@ -42,12 +48,13 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 ### Que hacer para desplegar la app
 
 Lo primero y muy importante hacer
-sudo pecl install mongodb
-y
-sudo apt install php-mongodb
+sudo apt install php-xml php-mysql
 
 1. git clone git@github.com:Biblio-Code/Biblio-Code.git
 2. cd Biblio-Code
-3. crear el env.local y poner cambiar las variables de entorno MONGODB_URL y MONGO_DB
+3. crear el env.local y cambiar las variables de entorno DATABASE_URL, GO_ID y GO_SECRET
 4. composer install
 5. symfony server:start
+
+### Deplegada en heroku
+https://biblio-code.herokuapp.com/
