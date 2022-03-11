@@ -42,12 +42,12 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 ### Que hacer para desplegar la app
 
 Lo primero y muy importante hacer
-sudo pecl install mongodb
+sudo apt install php-xml
 y
-sudo apt install php-mongodb
+sudo apt install php-mysql
 
 1. git clone git@github.com:Biblio-Code/Biblio-Code.git
 2. cd Biblio-Code
-3. crear el env.local y poner cambiar las variables de entorno MONGODB_URL y MONGO_DB
+3. crear el env.local y cambiar las variables de entorno DATABASE_URL, GO_ID y GO_SECRET
 4. composer install
 5. symfony server:start
