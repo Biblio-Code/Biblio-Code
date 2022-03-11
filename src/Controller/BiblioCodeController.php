@@ -8,7 +8,6 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class BiblioCodeController extends AbstractController
 {
-//VER NOTICIA
 
     function verFormulario(ManagerRegistry $dm)
     {
@@ -27,7 +26,12 @@ class BiblioCodeController extends AbstractController
     function verTutorial(ManagerRegistry $dm, $id)
     {
         $tutoriales = $dm->getRepository(Tutorial::class)->find($id);
-        return $this->render('index.html.twig', ['tutoriales' => $tutoriales]); 
+        return $this->render('index.html.twig', ['tutoriales' => $tutoriales]);
+    }
+
+    public function logout(): void
+    {
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }
 

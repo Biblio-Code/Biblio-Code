@@ -10,14 +10,6 @@ formulario:
     path: /formulario
     controller: App\Controller\ComunidadController::verComunidad
 
-comunidad:
-    path: /verComunidad
-    controller: App\Controller\ComunidadController::verComunidad
-
-provincia:
-    path: /verProvincia
-    controller: App\Controller\ProvinciaController::verProvincia
-
 index:
     path: /
     controller: App\Controller\BiblioCodeController::verIndex
@@ -46,3 +38,7 @@ deleteTutorial:
     path: /api/tutorial/{id}
     controller: App\Controller\TutorialController::deleteTutorial
     methods: ["DELETE"]
+
+app_logout:
+    path: /logout
+    controller: App\Controller\TutorialController::logout
