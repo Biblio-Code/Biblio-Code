@@ -24,7 +24,7 @@ Las tecnolgias utilizadas para la realización de este proyecto son symfony, php
 
 - [X] __RA4__: Transferencia de archivos. Subir código fuente a __Heroku__
 - [X] __RA5__: Parámetros de configuración. Configurar variables necesarias: __URI__ de base datos, ...
-- [ ] __RA6__: Documentación y control de versiones con __Git__. Desarrollo con __Markdown__ de README.md 
+- [X] __RA6__: Documentación y control de versiones con __Git__. Desarrollo con __Markdown__ de README.md 
 
 ## Requisitos Empresa e Iniciativa Emprendedora
 
