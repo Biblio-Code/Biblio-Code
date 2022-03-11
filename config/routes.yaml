@@ -20,7 +20,7 @@ provincia:
 
 index:
     path: /
-    controller: App\Controller\ControllerBiblioCode::verIndex
+    controller: App\Controller\BiblioCodeController::verIndex
 
 getTutorial:
     path: /api/tutorial/{id}

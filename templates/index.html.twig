@@ -7,5 +7,12 @@
 <h1>ÚLTIMOS BIBLIO-CODES</h1>
 <br>
 
+
+<ul>
+    {% for tutorial in tutoriales %}
+        <li>{{ tutorial.titulo}}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
 
