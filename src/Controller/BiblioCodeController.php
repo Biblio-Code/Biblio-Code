@@ -84,6 +84,8 @@ class BiblioCodeController extends AbstractController
             array_push($data->data, $result);
         }
 
+
+
         return new JsonResponse($data);
 
      }

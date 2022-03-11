@@ -31,8 +31,14 @@
         var dt = $('#tablaTutorial').DataTable({
             "processsing": true,
             "serverSide": true,
-            "ajax": 'data/jsonTutoriales'
+            "ajax": 'api/tutorial'
         });
     });
+
+    {# function recorrerJson(){
+        for(let i = 0; i < data.artists.items.length; i++) {
+    console.log(data.artists.items[i].href);  // (o el campo que necesites)
+}
+    } #}
 </script>
 {% endblock %}
