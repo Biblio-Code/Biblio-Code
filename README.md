@@ -42,9 +42,7 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 ### Que hacer para desplegar la app
 
 Lo primero y muy importante hacer
-sudo apt install php-xml
-y
-sudo apt install php-mysql
+sudo apt install php-xml php-mysql
 
 1. git clone git@github.com:Biblio-Code/Biblio-Code.git
 2. cd Biblio-Code
