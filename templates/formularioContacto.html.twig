@@ -88,8 +88,8 @@
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
 								</div>
-								<label>Comunidad</label>
-								<select name="comunidad" onchange="actualizaProvincias(this.value)">
+								<label class="form-control">Comunidad</label>
+								<select name="comunidad" onchange="actualizaProvincias(this.value)" class="form-control">
 									<option value="">Seleccione...</option>
 									{% for comunidad in comunidades %}
 										<option value="{{comunidad.id}}">{{comunidad.comunidad}}</option>
@@ -103,8 +103,8 @@
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
 								</div>
-								<label>Provincia</label>
-								<select name="provincia" onchange="actualizaMunicipios(this.value)">
+								<label class="form-control">Provincia</label>
+								<select name="provincia" onchange="actualizaMunicipios(this.value)" class="form-control">
 									<option value="">Seleccione...</option>
 									{% for provincia in provincias %}
 										<option value="{{provincia.id}}">{{provincia.provincia}}</option>
@@ -113,12 +113,13 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
+						<div class="form-group">
 						<div class="input-group">
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
 							</div>
-							<label>Municipio</label>
-							<select name="municipio">
+							<label class="form-control">Municipio</label>
+							<select name="municipio" class="form-control">
 								<option value="">Seleccione...</option>
 								{% for municipio in municipios %}
 									<option value="{{municipio.id}}">{{municipio.municipio}}</option>
@@ -127,7 +128,7 @@
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
-
+					</div>
 					<div class="form-group">
 						<div class="input-group">
 							<div class="input-group-addon">
@@ -150,9 +151,9 @@
 				</div>
 				<hr>
 				<div class="form-footer">
-					<button type="submit" class="btn btn-primary">Enviar Datos</button>
+					<button type="submit" class="btn btn-primary form-control">Enviar Datos</button>
 					&nbsp;
-					<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
+					<button type="button" id="volver" name="volver" class="btn btn-danger form-control">Cancelar</button>
 				</div>
 
 			</form>
