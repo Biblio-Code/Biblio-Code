@@ -45,6 +45,8 @@ class TutorialController extends AbstractController
         foreach ($tutoriales as $tutorial) {
             $result = new \stdClass();
             $result->id = $tutorial->getId();
+            $result->titulo = $tutorial->getTitulo();
+            $result->lenguaje = $tutorial->getLenguaje();
             $result->url = $this->generateUrl('getTutorial', [
                 'id' => $result->id,
             ], UrlGeneratorInterface::ABSOLUTE_URL);

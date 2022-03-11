@@ -91,143 +91,128 @@
 								<label>Comunidad</label>
 								<select name="comunidad" onchange="actualizaProvincias(this.value)">
 									<option value="">Seleccione...</option>
-								{# 	{{path('comunidad')
-        							while (comunidad = resultado->fetch()) {
-									
-            						echo '<option value="{{comunidad['id']}}"> {{comunidad['comunidad']}}</option>'
-        							}}} #}
 									{% for comunidad in comunidades %}
-										<option value="">{{dump(comunidad)}}</option>
+										<option value="{{comunidad.id}}">{{comunidad.comunidad}}</option>
 									{% endfor %}
-									</select>
-								</div>
-								<span class="help-block" id="error"></span>
+								</select>
 							</div>
-							<div class="form-group">
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
 								</div>
 								<label>Provincia</label>
-								<select name="provincia" onchange="actualizaMunicipio(this.value)">
+								<select name="provincia" onchange="actualizaMunicipios(this.value)">
 									<option value="">Seleccione...</option>
-								{#{{path('provincia')}}
-    								while ($provincia = $consulta->fetch()) {
-       							 echo '<option value="' . $provincia['id'] . '">' . $provincia['provincia'] . '</option>';
-    							} #}
-									{% for comunidad in comunidades %}
-										<option value="
-										">{{dump(comunidad)}}</option>
+									{% for provincia in provincias %}
+										<option value="{{provincia.id}}">{{provincia.provincia}}</option>
 									{% endfor %}
-								</div>
-								<span class="help-block" id="error"></span>
+								</select>
 							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="provincia" id="provincia" type="text" class="form-control" placeholder="Provincia">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="municipio" id="municipio" type="text" class="form-control" placeholder="Municipio">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="email" id="email" type="text" class="form-control" placeholder="Email">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-
+							<span class="help-block" id="error"></span>
 						</div>
-						<hr>
-						<div class="form-footer">
-							<button type="submit" class="btn btn-primary">Enviar Datos</button>
-							&nbsp;
-							<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<label>Municipio</label>
+							<select name="municipio">
+								<option value="">Seleccione...</option>
+								{% for municipio in municipios %}
+									<option value="{{municipio.id}}">{{municipio.municipio}}</option>
+								{% endfor %}
+							</select>
 						</div>
+						<span class="help-block" id="error"></span>
+					</div>
 
-					</form>
-				</main>
-			</div>
-		</div>
-	{% endblock %}
-	{% block javascripts %}
-		<!-- Bootstrap core JavaScript
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
+						</div>
+						<span class="help-block" id="error"></span>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<input name="email" id="email" type="text" class="form-control" placeholder="Email">
+						</div>
+						<span class="help-block" id="error"></span>
+					</div>
+
+				</div>
+				<hr>
+				<div class="form-footer">
+					<button type="submit" class="btn btn-primary">Enviar Datos</button>
+					&nbsp;
+					<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
+				</div>
+
+			</form>
+		</main>
+	</div>
+</div>{% endblock %}{% block javascripts %}
+<!-- Bootstrap core JavaScript
 					    ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
-		<script src={{ asset('js/bootstrap.min.js')}}></script>
-		<script src={{ asset('js/jquery.validate.min.js')}}></script>
+<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
+<script src={{ asset('js/bootstrap.min.js')}}></script>
+<script src={{ asset('js/jquery.validate.min.js')}}></script>
 
-		<!-- Icons -->
-		<script src={{ asset('icons/feather.min.js')}}></script>
-		<script>
-			feather.replace()
-		</script>
-		<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
-		<script>
-			$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
+<!-- Icons -->
+<script src={{ asset('icons/feather.min.js')}}></script>
+<script>
+	feather.replace()
+</script>
+<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
+<script>
+	$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
 var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validnombre", function (value, element) {
 return this.optional(element) || nombreregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n apellidos
+// Patrón validación apellidos
 var apellidosregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validapellidos", function (value, element) {
 return this.optional(element) || apellidosregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n país
+// Patrón validación país
 var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validpais", function (value, element) {
 return this.optional(element) || paisregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n comunidad
+// Patrón validación comunidad
 var comunidadregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validcomunidad", function (value, element) {
 return this.optional(element) || comunidadregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n provincia
+// Patrón validación provincia
 var provinciaregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validprovincia", function (value, element) {
 return this.optional(element) || provinciaregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n municipio
+// Patrón validación municipio
 var municipioregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validmunicipio", function (value, element) {
 return this.optional(element) || municipioregex.test(value);
 });
-
 
 // Patrón validación NIF
 var nifregex = /(^([0-9]{8,8}\-[A-Z])|^)+$/;
@@ -250,7 +235,7 @@ $.validator.addMethod("validcodpostal", function (value, element) {
 return this.optional(element) || codpostalregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n email
+// Patrón validación email
 var eregex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 $.validator.addMethod("validemail", function (value, element) {
@@ -372,9 +357,9 @@ alert('ok');
 }
 });
 })
-		</script>
-		<script>
-			feather.replace()
+</script>
+<script>
+	feather.replace()
 
 $('document').ready(function () {
 
@@ -403,45 +388,4 @@ $('#id').val(data["id"]);
 }
 });
 })
-		</script>
-		<script>
-			function actualizaProvincias(idComunidad) {
-if (idComunidad == "") {
-document.getElementById("selProvincia").innerHTML = "";
-document.getElementById("selProvincia").disabled = true;
-document.getElementById("selMunicipio").innerHTML = "";
-document.getElementById("selMunicipio").disabled = true;
-return;
-} else {
-xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-if (this.readyState == 4 && this.status == 200) {
-document.getElementById("selProvincia").innerHTML = this.responseText;
-document.getElementById("selProvincia").disabled = false;
-document.getElementById("selMunicipio").innerHTML = "";
-document.getElementById("selMunicipio").disabled = true;
-}
-};
-xmlhttp.open("GET", "ejercicio6.2provincias.php?id=" + idComunidad, true);
-xmlhttp.send();
-}
-}
-function actualizaMunicipios(idMunicipio) {
-if (idMunicipio == "") {
-document.getElementById("selMunicipio").innerHTML = "";
-document.getElementById("selMunicipio").disabled = true;
-return;
-} else {
-xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-if (this.readyState == 4 && this.status == 200) {
-document.getElementById("selMunicipio").innerHTML = this.responseText;
-document.getElementById("selMunicipio").disabled = false;
-}
-};
-xmlhttp.open("GET", "ejercicio6.2municipios.php?id=" + idMunicipio, true);
-xmlhttp.send();
-}
-}
-		</script>
-	{% endblock %}
+{% endblock %}

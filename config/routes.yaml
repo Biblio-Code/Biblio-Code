@@ -8,15 +8,7 @@ kernel:
 
 formulario:
     path: /formulario
-    controller: App\Controller\ComunidadController::verComunidad
-
-comunidad:
-    path: /verComunidad
-    controller: App\Controller\ComunidadController::verComunidad
-
-provincia:
-    path: /verProvincia
-    controller: App\Controller\ProvinciaController::verProvincia
+    controller: App\Controller\BiblioCodeController::verFormulario
 
 index:
     path: /
