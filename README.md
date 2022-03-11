@@ -16,7 +16,7 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 
 ## Requisitos Despliegue de Aplicaciones Web
 
-- [ ] __RA4__: Transferencia de archivos. Subir código fuente a __Heroku__
+- [X] __RA4__: Transferencia de archivos. Subir código fuente a __Heroku__
 - [X] __RA5__: Parámetros de configuración. Configurar variables necesarias: __URI__ de base datos, ...
 - [ ] __RA6__: Documentación y control de versiones con __Git__. Desarrollo con __Markdown__ de README.md 
 
