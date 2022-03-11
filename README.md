@@ -2,7 +2,7 @@
 Proyecto de Dwes - Dwec - Interfaces - Empresa
 
 ## Introducción
-Este es un proyecto realizado en IES Luis Vélez de Guevara de Écija realizado por tres alumnos de 2ºDAW. Consiste en realizar una página web para la visualización de distintos lenguajes de programación, además dispone la funcionalidad de implementar tus propios tutoriales a la página iniciando sesión con google.
+Este es un proyecto realizado en IES Luis Vélez de Guevara de Écija realizado por tres alumnos de 2ºDAW. Consiste en realizar una página web para la visualización de distintos tutotiales de lenguajes de programación, además dispone la funcionalidad de implementar tus propios tutoriales a la página iniciando sesión con google.
 
 ## Tecnología utilizadas
 Las tecnolgias utilizadas para la realización de este proyecto son symfony, php y javascript.
