@@ -19,6 +19,14 @@ class BiblioCodeController extends AbstractController
     function verIndex(ManagerRegistry $dm)
     {
         $tutoriales = $dm->getRepository(Tutorial::class)->findAll();
+        $usuario = $this->getUser();
+        return $this->render('index.html.twig', ['usuario' => $usuario, 'tutoriales' => $tutoriales]); 
+    }
+
+
+    function verTutorial(ManagerRegistry $dm, $id)
+    {
+        $tutoriales = $dm->getRepository(Tutorial::class)->find($id);
         return $this->render('index.html.twig', ['tutoriales' => $tutoriales]); 
     }
 }
