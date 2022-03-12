@@ -4,11 +4,8 @@
 
 {% block main %}
 
-<h1>ÚLTIMOS BIBLIO-CODES</h1>
+<h1>{{ tutorial.titulo }} - BiblioCode Nº {{ tutorial.id }}</h1>
 <br>
-<ul>
-    {% for tutorial in tutoriales %}
-        <li>{{ tutorial.titulo}}</li>
-    {% endfor %}
-</ul>
-
+<textarea class="rounded-3" id="textarea" rows="10">{{tutorial.codigo}}</textarea>
+<br>
+{% endblock %}

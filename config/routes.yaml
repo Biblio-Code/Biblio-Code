@@ -14,6 +14,11 @@ index:
     path: /
     controller: App\Controller\BiblioCodeController::verIndex
 
+verTutorial:
+    path: /tutorial/{id}
+    controller: App\Controller\BiblioCodeController::verTutorial
+    methods: ["GET"]
+
 getTutorial:
     path: /api/tutorial/{id}
     controller: App\Controller\TutorialController::getTutorial

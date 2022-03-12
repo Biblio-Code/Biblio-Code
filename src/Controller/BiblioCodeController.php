@@ -33,10 +33,16 @@ class BiblioCodeController extends AbstractController
      }
 
 
+    function verIndex(ManagerRegistry $dm)
+    {
+        $tutoriales = $dm->getRepository(Tutorial::class)->findAll();
+        return $this->render('index.html.twig', ['tutoriales' => $tutoriales]);
+    }
+
     function verTutorial(ManagerRegistry $dm, $id)
     {
-        $tutoriales = $dm->getRepository(Tutorial::class)->find($id);
-        return $this->render('index.html.twig', ['tutoriales' => $tutoriales]);
+        $tutorial = $dm->getRepository(Tutorial::class)->find($id);
+        return $this->render('verTutorial.twig', ['tutorial' => $tutorial]);
     }
 
     public function logout(): void
