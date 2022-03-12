@@ -164,7 +164,7 @@
 <script src="{{ asset('js/jquery.validate.min.js')}}"></script>
 
 <!-- Icons -->
-<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
+<script type="text/javascript" language="javascript" src="{{ asset('js/datatables/datatables.min.js')}}"></script>
 <script>
 	$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
 	var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
@@ -350,7 +350,9 @@
 	alert('ok');
 	}
 	});
-
+	})
+	</script>
+	<script>
 	$('document').ready(function () {
 
 	$('#volver').on('click', function () {
@@ -376,5 +378,6 @@
 	$('#email').val(data["email"]);
 	$('#id').val(data["id"]);
 	}});
+	})
 </script>
 {% endblock %}
