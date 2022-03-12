@@ -4,8 +4,26 @@ Proyecto de Dwes - Dwec - Interfaces - Empresa
 ## Introducción
 Este es un proyecto realizado en IES Luis Vélez de Guevara de Écija realizado por tres alumnos de 2ºDAW. Consiste en realizar una página web para la visualización de distintos tutotiales de lenguajes de programación, además dispone la funcionalidad de implementar tus propios tutoriales a la página iniciando sesión con google.
 
+Un correo de prueba para probar el inicio de sesion con google
+bibliocode.prueba@gmail.com
+bibliocode123
+
 ## Tecnología utilizadas
-Las tecnolgias utilizadas para la realización de este proyecto son symfony, php, javascript, bootstrap y css.
+Este Proyecto funciona bajo *Symfony* 6.0, un framework de php además usamos javascript para las tablas y la utilización de ajax, y para el apartado visual usamos boostrap 5 un framework para css
+
+### Que hacer para desplegar la app
+
+Lo primero y muy importante hacer
+sudo apt install php-xml php-mysql
+
+1. git clone git@github.com:Biblio-Code/Biblio-Code.git
+2. cd Biblio-Code
+3. crear el env.local y cambiar las variables de entorno DATABASE_URL, GO_ID y GO_SECRET
+4. composer install
+5. symfony server:start
+
+### Deplegada en heroku
+https://biblio-code.herokuapp.com/
 
 ## Requisitos Desarrollo en el Entorno Servidor
 
@@ -44,17 +62,3 @@ Las tecnolgias utilizadas para la realización de este proyecto son symfony, php
 - Alberto Arranz Alé ► [AlbertoArraz](https://github.com/AlbertoArraz)
 - Laura Serrano Ruiz ► [lauraaa96](https://github.com/lauraaa96)
 - Salvador Delgado Bolancé ► [slvdr510](https://github.com/slvdr510)
-
-### Que hacer para desplegar la app
-
-Lo primero y muy importante hacer
-sudo apt install php-xml php-mysql
-
-1. git clone git@github.com:Biblio-Code/Biblio-Code.git
-2. cd Biblio-Code
-3. crear el env.local y cambiar las variables de entorno DATABASE_URL, GO_ID y GO_SECRET
-4. composer install
-5. symfony server:start
-
-### Deplegada en heroku
-https://biblio-code.herokuapp.com/
