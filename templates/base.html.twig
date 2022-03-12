@@ -19,8 +19,8 @@ block javascripts
 	<meta content="html, cabeceras, etiquetas, estilos, párrafos" name="keywords">
     <meta name="google-signin-client_id" content="GO_ID">
     <title>{% block titulo %}- Biblio-Code{% endblock %}</title>
-	{% block stylesheets %}<link href="{{ asset('css/style.css') }}" rel="stylesheet" />{% endblock %}
-	
+	{% block stylesheets %}{% endblock %}
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Para consumir API de Usuarios de Google según se logean-->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -131,7 +131,7 @@ block javascripts
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">
-                        {% if (usuario.username is defined) and (usuario.username is not null) %}
+                        {% if (usuario is defined) and (usuario.username is not null) %}
                         Logged in as:<br/>{% block usuario %} {#{ }#} {% endblock %}
                             {{usuario.username}}
                         {% endif %}
