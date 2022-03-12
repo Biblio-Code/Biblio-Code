@@ -1,6 +1,9 @@
 <?php
 namespace App\Controller;
 use App\Entity\Tutorial;
+use App\Entity\Comunidad;
+use App\Entity\Municipio;
+use App\Entity\Provincia;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\Persistence\ManagerRegistry;
@@ -9,18 +12,25 @@ use Doctrine\Persistence\ManagerRegistry;
 class BiblioCodeController extends AbstractController
 {
 
-    function verFormulario(ManagerRegistry $dm)
+    function verFormulario(ManagerRegistry $doctrine)
     {
-        $comunidades = $dm->getRepository(Comunidad::class)->findAll();
-        return $this->render('formularioContacto.html.twig',['comunidades' => $comunidades]); 
-    }
+        $comunidades = $doctrine->getRepository(Comunidad::class)->findAll();
+        $provincias = $doctrine->getRepository(Provincia::class)->findAll();
+        $municipios = $doctrine->getRepository(Municipio::class)->findAll();
 
-    function verIndex(ManagerRegistry $dm)
-    {
-        $tutoriales = $dm->getRepository(Tutorial::class)->findAll();
-        $usuario = $this->getUser();
-        return $this->render('index.html.twig', ['usuario' => $usuario, 'tutoriales' => $tutoriales]); 
-    }
+        if (!$comunidades) {
+            throw $this->createNotFoundException('No comunidad found');
+        }
+        if (!$provincias) {
+            throw $this->createNotFoundException('No provincia found');
+        }
+        if (!$municipios) {
+            throw $this->createNotFoundException('No municipio found');
+        }
+
+        return $this->render('formularioContacto.html.twig', array('comunidades' => $comunidades, 'provincias' => $provincias, 'municipios' => $municipios)); 
+
+     }
 
 
     function verTutorial(ManagerRegistry $dm, $id)

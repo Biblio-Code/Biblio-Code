@@ -4,21 +4,10 @@
 	Formulario de Contacto
 	{{ parent() }}
 {% endblock %}
-{% block stylesheets %}
-	<link
-	href={{ asset('css/bootstrap.min.css')}} rel="stylesheet">
-	<!-- Custom styles for this template -->
-	<link href={{ asset('css/dashboard.css')}} rel="stylesheet">
-	<link href={{ asset('css/grid.css')}} rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href={{ asset('js/datatables/datatables.min.css')}}>
-{% endblock %}
 {% block main %}
 	<hr>
 	<div class="container-fluid">
-		<div
-			class="row">
-			{#include('menu.php')#}
-
+		<div class="row">
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 				<h2>Formulario de contacto</h2>
 				<hr>
@@ -88,105 +77,104 @@
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
 								</div>
-								<label>Comunidad</label>
-								<select name="comunidad" onchange="actualizaProvincias(this.value)">
+								<label class="form-control">Comunidad</label>
+								<select name="comunidad" onchange="actualizaProvincias(this.value)" class="form-control">
 									<option value="">Seleccione...</option>
-								{# 	{{path('comunidad')
-        							while (comunidad = resultado->fetch()) {
-									
-            						echo '<option value="{{comunidad['id']}}"> {{comunidad['comunidad']}}</option>'
-        							}}} #}
 									{% for comunidad in comunidades %}
-										<option value="">{{dump(comunidad)}}</option>
+										<option value="{{comunidad.id}}">{{comunidad.comunidad}}</option>
 									{% endfor %}
-									</select>
-								</div>
-								<span class="help-block" id="error"></span>
+								</select>
 							</div>
-							<div class="form-group">
+							<span class="help-block" id="error"></span>
+						</div>
+						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
 								</div>
-								<label>Provincia</label>
-								<select name="provincia" onchange="actualizaMunicipio(this.value)">
+								<label class="form-control">Provincia</label>
+								<select name="provincia" onchange="actualizaMunicipios(this.value)" class="form-control">
 									<option value="">Seleccione...</option>
-								{#{{path('provincia')}}
-    								while ($provincia = $consulta->fetch()) {
-       							 echo '<option value="' . $provincia['id'] . '">' . $provincia['provincia'] . '</option>';
-    							} #}
-									{% for comunidad in comunidades %}
-										<option value="
-										">{{dump(comunidad)}}</option>
+									{% for provincia in provincias %}
+										<option value="{{provincia.id}}">{{provincia.provincia}}</option>
 									{% endfor %}
-								</div>
-								<span class="help-block" id="error"></span>
+								</select>
 							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="provincia" id="provincia" type="text" class="form-control" placeholder="Provincia">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="municipio" id="municipio" type="text" class="form-control" placeholder="Municipio">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon-envelope"></span>
-									</div>
-									<input name="email" id="email" type="text" class="form-control" placeholder="Email">
-								</div>
-								<span class="help-block" id="error"></span>
-							</div>
-
+							<span class="help-block" id="error"></span>
 						</div>
-						<hr>
-						<div class="form-footer">
-							<button type="submit" class="btn btn-primary">Enviar Datos</button>
-							&nbsp;
-							<button type="button" id="volver" name="volver" class="btn btn-primary">Cancelar</button>
+						<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<label class="form-control">Municipio</label>
+							<select name="municipio" class="form-control">
+								<option value="">Seleccione...</option>
+								{% for municipio in municipios %}
+									<option value="{{municipio.id}}">{{municipio.municipio}}</option>
+								{% endfor %}
+							</select>
 						</div>
+						</div>
+						<span class="help-block" id="error"></span>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<input name="telefono" id="telefono" type="text" class="form-control" placeholder="Teléfono">
+						</div>
+						<span class="help-block" id="error"></span>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<input name="email" id="email" type="text" class="form-control" placeholder="Email">
+						</div>
+						<span class="help-block" id="error"></span>
+					</div>
 
-					</form>
-				</main>
-			</div>
-		</div>
-	{% endblock %}
-	{% block javascripts %}
-		<!-- Bootstrap core JavaScript
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</div>
+							<textarea rows="5" class="form-control" placeholder="Por favor, indiquenos en que podemos ayudarle..." id="message"></textarea>
+						</div>
+						<span class="help-block" id="error"></span>
+					</div>
+
+
+				</div>
+
+				<hr>
+				<div class="form-footer">
+					<button type="submit" class="btn btn-primary">Enviar Datos</button>
+					&nbsp;
+					<button type="reset" name="volver" class="btn btn-danger">Borrar todo</button>
+				</div>
+
+			</form>
+		</main>
+	</div>
+</div>{% endblock %}{% block javascripts %}
+<!-- Bootstrap core JavaScript
 					    ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
-		<script src={{ asset('js/bootstrap.min.js')}}></script>
-		<script src={{ asset('js/jquery.validate.min.js')}}></script>
+<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
+<script src={{ asset('js/bootstrap.min.js')}}></script>
+<script src={{ asset('js/jquery.validate.min.js')}}></script>
 
-		<!-- Icons -->
-		<script src={{ asset('icons/feather.min.js')}}></script>
-		<script>
-			feather.replace()
-		</script>
-		<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
-		<script>
-			$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
+<!-- Icons -->
+<script src={{ asset('icons/feather.min.js')}}></script>
+<script>
+	feather.replace()
+</script>
+<script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
+<script>
+	$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
 var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validnombre", function (value, element) {
@@ -200,7 +188,7 @@ $.validator.addMethod("validapellidos", function (value, element) {
 return this.optional(element) || apellidosregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n país
+/*// PatrÃ³n validaciÃ³n país
 var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validpais", function (value, element) {
@@ -227,7 +215,7 @@ var municipioregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 $.validator.addMethod("validmunicipio", function (value, element) {
 return this.optional(element) || municipioregex.test(value);
 });
-
+*/
 
 // Patrón validación NIF
 var nifregex = /(^([0-9]{8,8}\-[A-Z])|^)+$/;
@@ -283,7 +271,7 @@ validcodpostal: true
 pais: {
 required: true,
 validpais: true
-},
+},/*
 comunidad: {
 required: true,
 validcomunidad: true
@@ -295,7 +283,7 @@ validprovincia: true
 municipio: {
 required: true,
 validmunicipio: true
-},
+},*/
 telefono: {
 required: false,
 number: true,
@@ -332,7 +320,7 @@ validcodpostal: "Por favor, introduce un código postal válido."
 pais: {
 required: "Por favor, indique un país.",
 validpais: "Solo se permiten letras y espacios en blancos."
-},
+},/*
 comunidad: {
 required: "Por favor, indique una comunidad.",
 validcomunidad: "Solo se permiten letras y espacios en blancos."
@@ -344,7 +332,7 @@ validprovincia: "Solo se permiten letras y espacios en blancos."
 municipio: {
 required: "Por favor, indique un municipio.",
 validmunicipio: "Solo se permiten letras y espacios en blancos."
-},
+},*/
 telefono: {
 required: "Por favor, indique un teléfono.",
 number: "Solo se permiten números",
@@ -372,14 +360,14 @@ alert('ok');
 }
 });
 })
-		</script>
-		<script>
-			feather.replace()
+</script>
+<script>
+	feather.replace()
 
 $('document').ready(function () {
 
 $('#volver').on('click', function () {
-document.location.href = 'clientes.php';
+document.location.href = '';
 });
 
 
@@ -393,19 +381,19 @@ $('#apellidos').val(data["apellidos"]);
 $("#nif").val(data["nif"]);
 $('#direccion').val(data["direccion"]);
 $('#codpostal').val(data["codpostal"]);
-$('#pais').val(data["pais"]);
+$('#pais').val(data["pais"]);/*
 $('#comunidad').val(data["comunidad"]);
 $('#provincia').val(data["provincia"]);
-$('#municipio').val(data["municipio"]);
+$('#municipio').val(data["municipio"]);*/
 $('#telefono').val(data["telefono"]);
 $('#email').val(data["email"]);
 $('#id').val(data["id"]);
 }
 });
 })
-		</script>
-		<script>
-			function actualizaProvincias(idComunidad) {
+</script>
+<script>
+	function actualizaProvincias(idComunidad) {
 if (idComunidad == "") {
 document.getElementById("selProvincia").innerHTML = "";
 document.getElementById("selProvincia").disabled = true;
@@ -443,5 +431,4 @@ xmlhttp.open("GET", "ejercicio6.2municipios.php?id=" + idMunicipio, true);
 xmlhttp.send();
 }
 }
-		</script>
-	{% endblock %}
+</script>{% endblock %}
