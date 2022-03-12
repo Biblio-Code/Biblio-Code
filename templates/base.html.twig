@@ -131,7 +131,7 @@ block javascripts
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">
-                        {% if (usuario is defined) and (usuario.username is not null) %}
+                        {% if (usuario.username is defined) and (usuario.username is not null) %}
                         Logged in as:<br/>{% block usuario %} {#{ }#} {% endblock %}
                             {{usuario.username}}
                         {% endif %}
