@@ -8,7 +8,8 @@ use Doctrine\ORM\Mapping\Id;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\Persistence\ManagerRegistry;
-
+use PhpParser\Node\Expr\AssignOp\Concat;
+use PhpParser\Node\Expr\Cast\Array_;
 
 class BiblioCodeController extends AbstractController
 {
@@ -76,11 +77,17 @@ class BiblioCodeController extends AbstractController
         $data->data = array();
 
         foreach ($tutoriales as $tutorial) {
-            $result = new \stdClass();
-            $result->id = $tutorial->getId();
-            $result->titulo = $tutorial->getTitulo();
-            $result->lenguaje = $tutorial->getLenguaje();
+            $data2 = new \stdClass();
+            $result = array();
+            $id = $tutorial->getId();
+            $titulo = $tutorial->getTitulo();
+            $lenguaje = $tutorial->getLenguaje();
+            $url = "<a href='/tutorial/".$id."'>Click aquí</a>";
 
+            array_push($result, $id);
+            array_push($result, $titulo);
+            array_push($result, $lenguaje);
+            array_push($result, $url);
             array_push($data->data, $result);
         }
 

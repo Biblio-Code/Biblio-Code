@@ -19,7 +19,6 @@ block javascripts
 	<meta content="html, cabeceras, etiquetas, estilos, párrafos" name="keywords">
     <title>{% block titulo %}- Biblio-Code{% endblock %}</title>
 	{% block stylesheets %}<link href="{{ asset('css/style.css') }}" rel="stylesheet" />{% endblock %}
-	{% block javascripts %}{% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Para consumir API de Usuarios de Google según se logean-->
 
@@ -183,5 +182,6 @@ block javascripts
         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     }
 </script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>
