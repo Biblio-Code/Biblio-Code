@@ -36,8 +36,20 @@ class BiblioCodeController extends AbstractController
 
     function verIndex(ManagerRegistry $dm)
     {
+        $usuario = $this->getUser();
         $tutoriales = $dm->getRepository(Tutorial::class)->findAll();
-        return $this->render('index.html.twig', ['tutoriales' => $tutoriales]); 
+        return $this->render('index.html.twig', ['tutoriales' => $tutoriales, 'usuario' => $usuario]);
+    }
+
+    function verTutorial(ManagerRegistry $dm, $id)
+    {
+        $tutorial = $dm->getRepository(Tutorial::class)->find($id);
+        return $this->render('verTutorial.twig', ['tutorial' => $tutorial]);
+    }
+
+    public function logout(): void
+    {
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
     function verTablaTutoriales(ManagerRegistry $doctrine)

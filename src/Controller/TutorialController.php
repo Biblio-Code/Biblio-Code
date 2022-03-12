@@ -100,13 +100,13 @@ class TutorialController extends AbstractController
     }
 
     function deleteTutorial(ManagerRegistry $doctrine, $id)
-  {
+    {
     $entityManager = $doctrine->getManager();
     $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
     if ($tutorial == null) {
-      return new JsonResponse([
+        return new JsonResponse([
         'error' => 'Tutorial not found'
-      ], 404);
+        ], 404);
     }
 
     $entityManager->remove($tutorial);
@@ -114,5 +114,5 @@ class TutorialController extends AbstractController
 
     // Devuelve una respuesta vacia
     return new JsonResponse(null, 204);
-  }
+    }
 }

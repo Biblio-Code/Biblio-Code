@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block titulo %} {{ tutorial.titulo }} - {{ parent() }} {% endblock %}
+
+{% block main %}
+            <h5 class="card-title p-0 m-0 text-center">{{ tutorial.titulo }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Lenguaje: {{tutorial.lenguaje}}</h6>
+            <div class="row">
+                <div class="col-md-7 m-1 p-0">
+                    <div class="card m-0 p-0">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-3 text-muted text-center">C&oacute;digo</h6>
+                            <p class="card-text">{{ tutorial.codigo }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md m-1 p-0">
+                    <div class="card m-0 p-0">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-3 text-muted text-center">Gu&iacute;a</h6>
+                            <p class="card-text">{{ tutorial.textotutorial }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}

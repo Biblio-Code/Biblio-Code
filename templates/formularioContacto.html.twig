@@ -7,10 +7,7 @@
 {% block main %}
 	<hr>
 	<div class="container-fluid">
-		<div
-			class="row">
-			{#include('menu.php')#}
-
+		<div class="row">
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 				<h2>Formulario de contacto</h2>
 				<hr>
@@ -140,6 +137,7 @@
 						<span class="help-block" id="error"></span>
 					</div>
 					<div class="form-group my-2">
+
 						<div class="input-group">
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
@@ -148,8 +146,6 @@
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
-
-
 				</div>
 				<hr>
 				<div class="form-footer">
@@ -157,13 +153,11 @@
 					&nbsp;
 					<button type="reset" id="volver" name="volver" class="btn btn-danger">Borrar todo</button>
 				</div>
-
 			</form>
 		</main>
 	</div>
-</div>{% endblock %}{% block javascripts %}<!-- Bootstrap core JavaScript
-					    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
+</div>{% endblock %}{% block javascripts %}
+<script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
 <script src={{ asset('js/bootstrap.min.js')}}></script>
 <script src={{ asset('js/jquery.validate.min.js')}}></script>
 
@@ -270,7 +264,7 @@ validcodpostal: true
 pais: {
 required: true,
 validpais: true
-},
+},/*
 comunidad: {
 required: true,
 validcomunidad: true
@@ -282,7 +276,7 @@ validprovincia: true
 municipio: {
 required: true,
 validmunicipio: true
-},
+},*/
 telefono: {
 required: false,
 number: true,
@@ -319,7 +313,7 @@ validcodpostal: "Por favor, introduce un código postal válido."
 pais: {
 required: "Por favor, indique un país.",
 validpais: "Solo se permiten letras y espacios en blancos."
-},
+},/*
 comunidad: {
 required: "Por favor, indique una comunidad.",
 validcomunidad: "Solo se permiten letras y espacios en blancos."
@@ -331,7 +325,7 @@ validprovincia: "Solo se permiten letras y espacios en blancos."
 municipio: {
 required: "Por favor, indique un municipio.",
 validmunicipio: "Solo se permiten letras y espacios en blancos."
-},
+},*/
 telefono: {
 required: "Por favor, indique un teléfono.",
 number: "Solo se permiten números",
@@ -358,13 +352,11 @@ form.submit();
 alert('ok');
 }
 });
-})</script><script>
-feather.replace()
 
 $('document').ready(function () {
 
 $('#volver').on('click', function () {
-document.location.href = 'clientes.php';
+document.location.href = '';
 });
 
 
@@ -378,10 +370,10 @@ $('#apellidos').val(data["apellidos"]);
 $("#nif").val(data["nif"]);
 $('#direccion').val(data["direccion"]);
 $('#codpostal').val(data["codpostal"]);
-$('#pais').val(data["pais"]);
+$('#pais').val(data["pais"]);/*
 $('#comunidad').val(data["comunidad"]);
 $('#provincia').val(data["provincia"]);
-$('#municipio').val(data["municipio"]);
+$('#municipio').val(data["municipio"]);*/
 $('#telefono').val(data["telefono"]);
 $('#email').val(data["email"]);
 $('#id').val(data["id"]);
@@ -389,3 +381,45 @@ $('#id').val(data["id"]);
 });
 })
 {% endblock %}
+=======
+</script>
+<script>
+	function actualizaProvincias(idComunidad) {
+if (idComunidad == "") {
+document.getElementById("selProvincia").innerHTML = "";
+document.getElementById("selProvincia").disabled = true;
+document.getElementById("selMunicipio").innerHTML = "";
+document.getElementById("selMunicipio").disabled = true;
+return;
+} else {
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+if (this.readyState == 4 && this.status == 200) {
+document.getElementById("selProvincia").innerHTML = this.responseText;
+document.getElementById("selProvincia").disabled = false;
+document.getElementById("selMunicipio").innerHTML = "";
+document.getElementById("selMunicipio").disabled = true;
+}
+};
+xmlhttp.open("GET", "ejercicio6.2provincias.php?id=" + idComunidad, true);
+xmlhttp.send();
+}
+}
+function actualizaMunicipios(idMunicipio) {
+if (idMunicipio == "") {
+document.getElementById("selMunicipio").innerHTML = "";
+document.getElementById("selMunicipio").disabled = true;
+return;
+} else {
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+if (this.readyState == 4 && this.status == 200) {
+document.getElementById("selMunicipio").innerHTML = this.responseText;
+document.getElementById("selMunicipio").disabled = false;
+}
+};
+xmlhttp.open("GET", "ejercicio6.2municipios.php?id=" + idMunicipio, true);
+xmlhttp.send();
+}
+}
+</script>{% endblock %}
