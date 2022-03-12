@@ -29,14 +29,14 @@ https://biblio-code.herokuapp.com/
 
 - [X] __RA5__: Implementado con Symfony
 - [X] __RA7__: API REST que permita hacer CRUD de alguna entidad (usuarios, noticias...)
-- [ ] __RA8__: Uso de AJAX
+- [X] __RA8__: Uso de AJAX
 - [X] __RA9__: Uso de servivio externo (Google, APIs externas, Twitter...)
 
 ## Requisitos Desarrollo en el Entorno Cliente
 
 - [X] __RA5__: Objeto form, objetos relacionados con eventos, eventos, envíos y validación de formularios..etc. No tenéis que tocar todas las partes sino trabajar algún aspecto relacionado con formularios, eventos, validación... Por ejemplo formularios de contacto, formularios de alta y cosas de este tipo 
 - [ ] __RA6__: Modelo de objetos DOM: objetos, acceso (esto ya lo hemos usado en clase), gestión de eventos (algunos/as ya lo han usado)
-- [ ] __RA7__: AJAX: envío y recepción de datos de forma asíncrona.
+- [X] __RA7__: AJAX: envío y recepción de datos de forma asíncrona.
 
 ## Requisitos Despliegue de Aplicaciones Web
 
