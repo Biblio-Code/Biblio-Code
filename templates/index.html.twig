@@ -9,7 +9,7 @@
         <a href="{{ path('ver_tweet', {'id': tweet.id}) }}">
             <img class="avatarBig" src="{{ asset('images/avatars/' ~  tweet.user.userName ~ '-big.jpg') }}" />
             <strong>{{ tweet.user.name }}</strong>
-            <span>@{{ tutorial. }}</span>
+            <span>@{{ tweet.user.id }}</span>
         </a>
         <small class="time">{{ tweet.date|date("d/m/Y H:i:s") }}</small>
     </div>
@@ -19,11 +19,10 @@
 #}
 <div class="container">
     <div class="row">
-
+        <div class=""></div>
     </div>
     <div class="row justify-content-center">
         <div class="col-12 col-sm-8 col-lg-6">
-            <!-- Section Heading-->
             <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                 <h2>ÚLTIMOS BIBLIO-CODES</h2>
                 <div class="line"></div>
