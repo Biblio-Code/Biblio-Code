@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "DT_RowId": "row_1",
+      "nombre": "Laura",
+      "apellidos": "Serrano Ruiz",
+      "anio": "1996",
+      "lugar": "Écija"
+    },
+    {
+      "DT_RowId": "row_2",
+      "nombre": "Miguel",
+      "apellidos": "Urbano Granada",
+      "anio": "1987",
+      "lugar": "Granada"
+    },
+    {
+      "DT_RowId": "row_3",
+      "nombre": "Alejandro",
+      "apellidos": "Rivera Pérez",
+      "anio": "1993",
+      "lugar": "Écija"
+    }
+  ]
+}

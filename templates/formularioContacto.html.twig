@@ -11,13 +11,13 @@
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 				<h2>Formulario de contacto</h2>
 				<hr>
-				<form role="form" id="register-form" action="{{path("formulario")}}" method="POST">
+				<form role="form" id="contact-form" action="{{path("formulario")}}" method="POST">
 
 					<div class="form-body">
 
 						<input type="hidden" value="0" id="id" name="id"/>
 
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-user"></span>
@@ -27,7 +27,7 @@
 							<span class="help-block" id="error"></span>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -36,7 +36,7 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -45,7 +45,7 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -54,7 +54,7 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -63,7 +63,7 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -72,7 +72,7 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -87,7 +87,7 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<div class="input-group">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-envelope"></span>
@@ -102,23 +102,23 @@
 							</div>
 							<span class="help-block" id="error"></span>
 						</div>
-						<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
+						<div class="form-group my-2">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<label class="form-control">Municipio</label>
+								<select name="municipio" class="form-control">
+									<option value="">Seleccione...</option>
+									{% for municipio in municipios %}
+										<option value="{{municipio.id}}">{{municipio.municipio}}</option>
+									{% endfor %}
+								</select>
 							</div>
-							<label class="form-control">Municipio</label>
-							<select name="municipio" class="form-control">
-								<option value="">Seleccione...</option>
-								{% for municipio in municipios %}
-									<option value="{{municipio.id}}">{{municipio.municipio}}</option>
-								{% endfor %}
-							</select>
+							<span class="help-block" id="error"></span>
 						</div>
-						</div>
-						<span class="help-block" id="error"></span>
 					</div>
-					<div class="form-group">
+					<div class="form-group my-2">
 						<div class="input-group">
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
@@ -127,7 +127,7 @@
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
-					<div class="form-group">
+					<div class="form-group my-2">
 						<div class="input-group">
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
@@ -136,8 +136,8 @@
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
+					<div class="form-group my-2">
 
-					<div class="form-group">
 						<div class="input-group">
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
@@ -146,24 +146,18 @@
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
-
-
 				</div>
-
 				<hr>
 				<div class="form-footer">
 					<button type="submit" class="btn btn-primary">Enviar Datos</button>
 					&nbsp;
-					<button type="reset" name="volver" class="btn btn-danger">Borrar todo</button>
+					<button type="reset" id="volver" name="volver" class="btn btn-danger">Borrar todo</button>
 				</div>
-
 			</form>
 		</main>
 	</div>
 </div>{% endblock %}{% block javascripts %}
-<!-- Bootstrap core JavaScript
-					    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster --><script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
+<script src={{ asset('js/jquery-3.3.1.min.js')}}> </script>
 <script src={{ asset('js/bootstrap.min.js')}}></script>
 <script src={{ asset('js/jquery.validate.min.js')}}></script>
 
@@ -174,48 +168,47 @@
 </script>
 <script type="text/javascript" language="javascript" src={{ asset('js/datatables/datatables.min.js')}}></script>
 <script>
-	$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
+$('document').ready(function () { // PatrÃ³n validaciÃ³n nombre
 var nombreregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validnombre", function (value, element) {
 return this.optional(element) || nombreregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n apellidos
+// Patrón validación apellidos
 var apellidosregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validapellidos", function (value, element) {
 return this.optional(element) || apellidosregex.test(value);
 });
 
-/*// PatrÃ³n validaciÃ³n país
+// Patrón validación país
 var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validpais", function (value, element) {
 return this.optional(element) || paisregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n comunidad
+// Patrón validación comunidad
 var comunidadregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validcomunidad", function (value, element) {
 return this.optional(element) || comunidadregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n provincia
+// Patrón validación provincia
 var provinciaregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validprovincia", function (value, element) {
 return this.optional(element) || provinciaregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n municipio
+// Patrón validación municipio
 var municipioregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validmunicipio", function (value, element) {
 return this.optional(element) || municipioregex.test(value);
 });
-*/
 
 // Patrón validación NIF
 var nifregex = /(^([0-9]{8,8}\-[A-Z])|^)+$/;
@@ -238,7 +231,7 @@ $.validator.addMethod("validcodpostal", function (value, element) {
 return this.optional(element) || codpostalregex.test(value);
 });
 
-// PatrÃ³n validaciÃ³n email
+// Patrón validación email
 var eregex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 $.validator.addMethod("validemail", function (value, element) {
@@ -359,10 +352,6 @@ form.submit();
 alert('ok');
 }
 });
-})
-</script>
-<script>
-	feather.replace()
 
 $('document').ready(function () {
 
@@ -391,6 +380,8 @@ $('#id').val(data["id"]);
 }
 });
 })
+{% endblock %}
+=======
 </script>
 <script>
 	function actualizaProvincias(idComunidad) {
