@@ -18,6 +18,9 @@
 </div>
 #}
 <div class="container">
+    <div class="row">
+
+    </div>
     <div class="row justify-content-center">
         <div class="col-12 col-sm-8 col-lg-6">
             <!-- Section Heading-->
@@ -31,6 +34,8 @@
         <div class="col-12 col-sm-10 col-lg-8">
             <div class="accordion faq-accordian" id="faqAccordion">
                 {% for tutorial in tutoriales %}
+                {% if loop.index == loop.length - 2%}
+                <hr/>
                 <div class="card border-0 wow fadeInUp border-4 border-gray" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="background-image: url('{{ asset('images/languages/' ~  tutorial.lenguaje ~ '.jpeg')}})">
                     <div class="card-header" id="card-{{tutorial.id}}">
                         <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
@@ -38,11 +43,43 @@
                     </div>
                     <div class="collapse" id="id-{{tutorial.id}}" aria-labelledby="{{tutorial.id}}" data-parent="#faqAccordion">
                         <div class="card-body">
-                            <p>Id Tutorial: {{tutorial.id}}</p>
-                            <p>Leguaje: {{tutorial.lenguaje}}</p>
+                            <p><a href="{{ path('verTutorial', {'id': tutorial.id}) }}">¡Pulsa aqu&iacute; para ir a este Tutorial!</a></p>
+                            <p>Lenguaje: {{tutorial.lenguaje}}</p>
                         </div>
                     </div>
                 </div>
+                <hr/>
+                {% endif %}
+                {% if loop.index == loop.length - 1 %}
+                <div class="card border-0 wow fadeInUp border-4 border-gray" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="background-image: url('{{ asset('images/languages/' ~  tutorial.lenguaje ~ '.jpeg')}})">
+                    <div class="card-header" id="card-{{tutorial.id}}">
+                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
+                        {{tutorial.titulo}}<span class="lni-chevron-up"></span></h6>
+                    </div>
+                    <div class="collapse" id="id-{{tutorial.id}}" aria-labelledby="{{tutorial.id}}" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            <p><a href="{{ path('verTutorial', {'id': tutorial.id}) }}">¡Pulsa aqu&iacute; para ir a este Tutorial!</a></p>
+                            <p>Lenguaje: {{tutorial.lenguaje}}</p>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                {% endif %}
+                {% if loop.index == loop.length %}
+                <div class="card border-0 wow fadeInUp border-4 border-gray" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="background-image: url('{{ asset('images/languages/' ~  tutorial.lenguaje ~ '.jpeg')}})">
+                    <div class="card-header" id="card-{{tutorial.id}}">
+                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
+                        {{tutorial.titulo}}<span class="lni-chevron-up"></span></h6>
+                    </div>
+                    <div class="collapse" id="id-{{tutorial.id}}" aria-labelledby="{{tutorial.id}}" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            <p><a href="{{ path('verTutorial', {'id': tutorial.id}) }}">¡Pulsa aqu&iacute; para ir a este Tutorial!</a></p>
+                            <p>Lenguaje: {{tutorial.lenguaje}}</p>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
