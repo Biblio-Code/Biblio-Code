@@ -4,12 +4,8 @@ use App\Entity\Tutorial;
 use App\Entity\Comunidad;
 use App\Entity\Provincia;
 use App\Entity\Municipio;
-use Doctrine\ORM\Mapping\Id;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\Persistence\ManagerRegistry;
-use PhpParser\Node\Expr\AssignOp\Concat;
-use PhpParser\Node\Expr\Cast\Array_;
 
 class BiblioCodeController extends AbstractController
 {
@@ -52,61 +48,9 @@ class BiblioCodeController extends AbstractController
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
-    function verTablaTutoriales(ManagerRegistry $doctrine)
+    function verTablaTutoriales()
     {
-        $tutoriales = $doctrine->getRepository(Tutorial::class)->findAll();
-
-        if (!$tutoriales) {
-            throw $this->createNotFoundException('No Tutorial found');
-        }
-
-        $results = new \stdClass();
-        $results->count = count($tutoriales);
-        $results->results = array();
-
-        foreach ($tutoriales as $tutorial) {
-            $result = new \stdClass();
-            $result->id = $tutorial->getId();
-            $result->titulo = $tutorial->getTitulo();
-            $result->lenguaje = $tutorial->getLenguaje();
-
-            array_push($results->results, $result);
-        }
-
-        return $this->render('tablaTutoriales.html.twig', array('tutoriales' => $tutoriales)); 
-
-     }
-
-     function jsonTutoriales(ManagerRegistry $doctrine)
-    {
-        $tutoriales = $doctrine->getRepository(Tutorial::class)->findAll();
-
-        if (!$tutoriales) {
-            throw $this->createNotFoundException('No Tutorial found');
-        }
-
-        $data = new \stdClass();
-        $data->data = array();
-
-        foreach ($tutoriales as $tutorial) {
-            $data2 = new \stdClass();
-            $result = array();
-            $id = $tutorial->getId();
-            $titulo = $tutorial->getTitulo();
-            $lenguaje = $tutorial->getLenguaje();
-            $url = "<a href='/tutorial/".$id."'>Click aquí</a>";
-
-            array_push($result, $id);
-            array_push($result, $titulo);
-            array_push($result, $lenguaje);
-            array_push($result, $url);
-            array_push($data->data, $result);
-        }
-
-
-
-        return new JsonResponse($data);
-
+        return $this->render('tablaTutoriales.html.twig'); 
      }
 }
 

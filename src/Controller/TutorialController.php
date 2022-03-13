@@ -57,7 +57,7 @@ class TutorialController extends AbstractController
         return new JsonResponse($results);
     }
 
-    public function postTutorial(ManagerRegistry $doctrine,Request $request)
+    public function postTutorial(ManagerRegistry $doctrine, Request $request)
     {
         $entityManager = $doctrine->getManager();
         $tutorial = new Tutorial();
@@ -101,18 +101,46 @@ class TutorialController extends AbstractController
 
     function deleteTutorial(ManagerRegistry $doctrine, $id)
     {
-    $entityManager = $doctrine->getManager();
-    $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
-    if ($tutorial == null) {
-        return new JsonResponse([
-        'error' => 'Tutorial not found'
-        ], 404);
+        $entityManager = $doctrine->getManager();
+        $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
+        if ($tutorial == null) {
+            return new JsonResponse([
+                'error' => 'Tutorial not found'
+            ], 404);
+        }
+
+        $entityManager->remove($tutorial);
+        $entityManager->flush();
+
+        // Devuelve una respuesta vacia
+        return new JsonResponse(null, 204);
     }
 
-    $entityManager->remove($tutorial);
-    $entityManager->flush();
+    function getAllDatos(ManagerRegistry $doctrine)
+    {
+        $tutoriales = $doctrine->getRepository(Tutorial::class)->findAll();
 
-    // Devuelve una respuesta vacia
-    return new JsonResponse(null, 204);
+        if (!$tutoriales) {
+            throw $this->createNotFoundException('No Tutoriales found');
+        }
+
+        $data = new \stdClass();
+        $data->data = array();
+
+        foreach ($tutoriales as $tutorial) {
+            $data2 = new \stdClass();
+            $result = array();
+            $id = $tutorial->getId();
+            $titulo = $tutorial->getTitulo();
+            $lenguaje = $tutorial->getLenguaje();
+            $url = "<a href='/tutorial/".$id."'>Click aquí</a>";
+
+            array_push($result, $id);
+            array_push($result, $titulo);
+            array_push($result, $lenguaje);
+            array_push($result, $url);
+            array_push($data->data, $result);
+        }
+        return new JsonResponse($data);
     }
 }
