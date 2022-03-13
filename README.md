@@ -37,7 +37,7 @@ https://biblio-code.herokuapp.com/
 ## Requisitos Desarrollo en el Entorno Cliente
 
 - [X] __RA5__: Objeto form, objetos relacionados con eventos, eventos, envíos y validación de formularios..etc. No tenéis que tocar todas las partes sino trabajar algún aspecto relacionado con formularios, eventos, validación... Por ejemplo formularios de contacto, formularios de alta y cosas de este tipo 
-- [ ] __RA6__: Modelo de objetos DOM: objetos, acceso (esto ya lo hemos usado en clase), gestión de eventos (algunos/as ya lo han usado)
+- [X] __RA6__: Modelo de objetos DOM: objetos, acceso (esto ya lo hemos usado en clase), gestión de eventos (algunos/as ya lo han usado)
 - [X] __RA7__: AJAX: envío y recepción de datos de forma asíncrona.
 
 ## Requisitos Despliegue de Aplicaciones Web
@@ -55,10 +55,10 @@ https://biblio-code.herokuapp.com/
 
 ## Requisitos Diseño de Interfaces Web
 
-- [ ] __RA1__: Diseño de la web
+- [X] __RA1__: Diseño de la web
 - [X] __RA2__: Crear un logo para la web
 - [X] __RA3__: Crear una licencia Creative Commons para la web y el logo
-- [ ] __RA4__: Usar imágenes/logos cuyas licencias lo permitan. (Tendréis que facilitarme un archivo que incluya todas las imágenes usadas junto con la URL de origen)
+- [X] __RA4__: Usar imágenes/logos cuyas licencias lo permitan. (Tendréis que facilitarme un archivo que incluya todas las imágenes usadas junto con la URL de origen)
 
 ### Participantes
 - Alberto Arranz Alé ► [AlbertoArraz](https://github.com/AlbertoArraz)
