@@ -101,18 +101,18 @@
 							<span class="help-block" id="error"></span>
 						</div>
 						<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<label class="form-control">Municipio</label>
+								<select name="municipio" class="form-control">
+									<option value="">Seleccione...</option>
+									{% for municipio in municipios %}
+										<option value="{{municipio.id}}">{{municipio.municipio}}</option>
+									{% endfor %}
+								</select>
 							</div>
-							<label class="form-control">Municipio</label>
-							<select name="municipio" class="form-control">
-								<option value="">Seleccione...</option>
-								{% for municipio in municipios %}
-									<option value="{{municipio.id}}">{{municipio.municipio}}</option>
-								{% endfor %}
-							</select>
-						</div>
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
@@ -173,6 +173,14 @@ var apellidosregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 $.validator.addMethod("validapellidos", function (value, element) {
 return this.optional(element) || apellidosregex.test(value);
 });
+
+// Patrón validación País
+var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
+
+$.validator.addMethod("validpais", function (value, element) {
+return this.optional(element) || paisregex.test(value);
+});
+
 
 // Patrón validación NIF
 var nifregex = /(^([0-9]{8,8}\-[A-Z])|^)+$/;
@@ -289,18 +297,13 @@ $(element).closest('.form-group').find('.help-block').html('');
 },
 submitHandler: function (form) {
 form.submit();
-alert('ok');
+window.alert("¡Gracias! Su formulario se ha enviado correctamente.");
 }
 });
 })
 </script>
 <script>
-$('document').ready(function () {
-
-$('#volver').on('click', function () {
-document.location.href = '';
-});
-
+	$('document').ready(function () {
 
 $.ajax({
 type: "GET",
