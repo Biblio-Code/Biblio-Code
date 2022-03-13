@@ -115,6 +115,25 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+/*text centered over the index welcome img*/
+.welcome-text{
+    font-size: 13vh;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -170%);
+    font-weight: 800;
+    font-family: sans-serif,monospace;
+}
+
+.arrow-down{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(28%, -60%);
+    color: white;
+}
 
 /*!
 * Start Bootstrap - SB Admin v7.0.4 (https://startbootstrap.com/template/sb-admin)

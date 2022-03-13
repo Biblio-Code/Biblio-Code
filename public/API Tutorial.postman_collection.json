@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "e663d229-089b-4441-ae11-3e9618e4e562",
+		"name": "API Tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get tutoriales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://biblio-code.herokuapp.com/api/tutorial",
+					"protocol": "https",
+					"host": [
+						"biblio-code",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tutorial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tutorial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://biblio-code.herokuapp.com/api/tutorial/24",
+					"protocol": "https",
+					"host": [
+						"biblio-code",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tutorial",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tutoriales datos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post tutorial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "titulo",
+							"value": "Tutorial Calculadora",
+							"type": "default"
+						},
+						{
+							"key": "lenguaje",
+							"value": "JavaScript",
+							"type": "default"
+						},
+						{
+							"key": "codigo",
+							"value": "function operaciones(op)\n{\n\n    var ops = {\n        sumar: function sumarNumeros(n1, n2) {\n            return (parseInt(n1) + parseInt(n2));\n        },\n\n        restar: function restarNumeros(n1, n2) {\n            return (parseInt(n1) - parseInt(n2));\n        },\n        \n        multiplicar: function multiplicarNumeros(n1, n2) {\n            return (parseInt(n1) * parseInt(n2));\n        },\n\n        dividir: function dividirNumeros(n1, n2) {\n            return (parseInt(n1) / parseInt(n2));\n        }\n\n\n    };\n\n    var operacion;\n\n    switch(op) {\n        case 'sumar':\n            var operando1 = document.getElementById(\"resultado\").value;\n            document.getElementById(\"resultado\").value = operando1 + \"+\";\n            operacion = document.getElementById(\"resultado\").value;\n            document.getElementById(\"memoria\").value = \"suma\";\n            break;\n        case 'restar':\n            var operando1 = document.getElementById(\"resultado\").value;\n            document.getElementById(\"resultado\").value = operando1 + \"-\";\n            operacion = document.getElementById(\"resultado\").value;\n            document.getElementById(\"memoria\").value = \"resta\";\n            break;\n        case 'multiplicar':\n            var operando1 = document.getElementById(\"resultado\").value;\n            document.getElementById(\"resultado\").value = operando1 + \"*\";\n            operacion = document.getElementById(\"resultado\").value;\n            document.getElementById(\"memoria\").value = \"multiplicacion\";\n            break;\n        case 'dividir':\n            var operando1 = document.getElementById(\"resultado\").value;\n            document.getElementById(\"resultado\").value = operando1 + \"/\";\n            operacion = document.getElementById(\"resultado\").value;\n            document.getElementById(\"memoria\").value = \"division\";\n            break;\n            \n        case 'igual':\t\n            \n            operacion = document.getElementById(\"resultado\").value;\n            \n            var memoriaop = document.getElementById(\"memoria\").value;\n            \n            switch(memoriaop) {\n                case 'suma':\n                    var operandos = operacion.split(\"+\");\n                    var resultado = ops.sumar(operandos[0], operandos[1]);\n                    document.getElementById(\"resultado\").value = resultado;\n                    break;\n                case 'resta':\n                    var operandos = operacion.split(\"-\");\n                    var resultado = ops.restar(operandos[0], operandos[1]);\n                    document.getElementById(\"resultado\").value = resultado;\n                    break;\n                case 'multiplicacion':\n                    var operandos = operacion.split(\"*\");\n                    var resultado = ops.multiplicar(operandos[0], operandos[1]);\n                    document.getElementById(\"resultado\").value = resultado;\n                    break;\n                case 'division':\n                    var operandos = operacion.split(\"/\");\n                    var resultado = ops.dividir(operandos[0], operandos[1]);\n                    document.getElementById(\"resultado\").value = resultado;\n                    break;\t\t\t\t\t\n            \n            }\t\n            \n\n            break;\n            \n\n    }\n\n\n}",
+							"type": "default"
+						},
+						{
+							"key": "texto",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum ligula nec felis lacinia, id ornare quam porta. Nullam sagittis velit sit amet dolor egestas tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum ligula nec felis lacinia, id ornare quam porta. Nullam sagittis velit sit amet dolor egestas tristique. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum ligula nec felis lacinia, id ornare quam porta. Nullam sagittis velit sit amet dolor egestas tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum ligula nec felis lacinia, id ornare quam porta. Nullam sagittis velit sit amet dolor egestas tristique. ",
+							"type": "default"
+						},
+						{
+							"key": "",
+							"value": "Prueba Texro",
+							"type": "default",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://biblio-code.herokuapp.com/api/tutorial",
+					"protocol": "https",
+					"host": [
+						"biblio-code",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tutorial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put tutorial",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Tutorial Decimal a Binario",
+							"type": "default"
+						},
+						{
+							"key": "lenguaje",
+							"value": "Java",
+							"type": "default"
+						},
+						{
+							"key": "codigo",
+							"value": "class Main {\n    \n  public static void main(String[] args) {\n    // binary number\n    long num = 110110111;\n    // call method by passing the binary number\n    int decimal = convertBinaryToDecimal(num);\n    System.out.println(\"Binary to Decimal\");\n    System.out.println(num + \" = \" + decimal);\n  }\n  public static int convertBinaryToDecimal(long num) {\n    int decimalNumber = 0, i = 0;\n    long remainder;\n    \n    while (num != 0) {\n      remainder = num % 10;\n      num /= 10;\n      decimalNumber += remainder * Math.pow(2, i);\n      ++i;\n    }\n    \n    return decimalNumber;\n  }\n}",
+							"type": "default"
+						},
+						{
+							"key": "texto",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum ligula nec felis lacinia, id ornare quam porta. Nullam sagittis velit sit amet dolor egestas tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum ligula nec felis lacinia, id ornare quam porta. Nullam sagittis velit sit amet dolor egestas tristique. ",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://biblio-code.herokuapp.com/api/tutorial/24",
+					"protocol": "https",
+					"host": [
+						"biblio-code",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tutorial",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete tutorial",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://biblio-code.herokuapp.com/api/tutorial/20",
+					"protocol": "https",
+					"host": [
+						"biblio-code",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tutorial",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

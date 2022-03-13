@@ -1,44 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block titulo %} Portada {{ parent() }} {% endblock %}
-{% block usuario %}{% endblock %}
+{% block titulo %}Portada {{ parent() }}{% endblock %}
 {% block main %}
-{#
-<div class="singleTweet">
-    <div class="cabecera">
-        <a href="{{ path('ver_tweet', {'id': tweet.id}) }}">
-            <img class="avatarBig" src="{{ asset('images/avatars/' ~  tweet.user.userName ~ '-big.jpg') }}" />
-            <strong>{{ tweet.user.name }}</strong>
-            <span>@{{ tweet.user.id }}</span>
-        </a>
-        <small class="time">{{ tweet.date|date("d/m/Y H:i:s") }}</small>
-    </div>
-    <div class="mensaje">{{ tweet.text|length }}</div>
-    <div class="likes">{{ tweet.likes|length }} 👍</div>
+
+<img src="{{asset('images/library.png')}}" class="img-fluid container-welcome" alt="Responsive image" style="max-width: 100%;">
+<div class="welcome-text text-center">Welcome to <br/>Biblio-Code</div>
+<div class="arrow-down">
+    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+    </svg>
 </div>
-#}
 <div class="container">
     <div class="row">
-        <div class=""></div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-8 col-lg-6">
-            <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <h2>ÚLTIMOS BIBLIO-CODES</h2>
-                <div class="line"></div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-lg-8">
+        <div class="col">
+            <h3 class="text-center mt-5 mb-5">Últimos Tutoriales</h3>
             <div class="accordion faq-accordian" id="faqAccordion">
                 {% for tutorial in tutoriales %}
                 {% if loop.index == loop.length - 2%}
                 <hr/>
-                <div class="card border-0 wow fadeInUp border-4 border-gray" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="background-image: url('{{ asset('images/languages/' ~  tutorial.lenguaje ~ '.jpeg')}})">
+                <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="card-header" id="card-{{tutorial.id}}">
-                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
-                        {{tutorial.titulo}}<span class="lni-chevron-up"></span></h6>
+                        <div class="row align-middle">
+                            <div class="col">
+                                <img src="{{ asset('images/languages/' ~  tutorial.lenguaje|lower ~ '.jpeg')}}" class="img-fluid" alt="Responsive image" style="max-height: 120px">
+                            </div>
+                            <div class="col-10">
+                                <h6 class="align-middle collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
+                                    {{tutorial.titulo}}
+                                </h6>
+                            </div>
+                        </div>
                     </div>
                     <div class="collapse" id="id-{{tutorial.id}}" aria-labelledby="{{tutorial.id}}" data-parent="#faqAccordion">
                         <div class="card-body">
@@ -50,10 +41,18 @@
                 <hr/>
                 {% endif %}
                 {% if loop.index == loop.length - 1 %}
-                <div class="card border-0 wow fadeInUp border-4 border-gray" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="background-image: url('{{ asset('images/languages/' ~  tutorial.lenguaje ~ '.jpeg')}})">
+                <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="card-header" id="card-{{tutorial.id}}">
-                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
-                        {{tutorial.titulo}}<span class="lni-chevron-up"></span></h6>
+                        <div class="row align-middle">
+                            <div class="col">
+                                <img src="{{ asset('images/languages/' ~  tutorial.lenguaje|lower ~ '.jpeg')}}" class="img-fluid" alt="Responsive image" style="max-height: 120px">
+                            </div>
+                            <div class="col-10">
+                                <h6 class="align-middle collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
+                                    {{tutorial.titulo}}
+                                </h6>
+                            </div>
+                        </div>
                     </div>
                     <div class="collapse" id="id-{{tutorial.id}}" aria-labelledby="{{tutorial.id}}" data-parent="#faqAccordion">
                         <div class="card-body">
@@ -65,10 +64,18 @@
                 <hr/>
                 {% endif %}
                 {% if loop.index == loop.length %}
-                <div class="card border-0 wow fadeInUp border-4 border-gray" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="background-image: url('{{ asset('images/languages/' ~  tutorial.lenguaje ~ '.jpeg')}})">
+                <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="card-header" id="card-{{tutorial.id}}">
-                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
-                        {{tutorial.titulo}}<span class="lni-chevron-up"></span></h6>
+                        <div class="row align-middle">
+                            <div class="col">
+                                <img src="{{ asset('images/languages/' ~  tutorial.lenguaje|lower ~ '.jpeg')}}" class="img-fluid" alt="Responsive image" style="max-height: 120px">
+                            </div>
+                            <div class="col-10">
+                                <h6 class="align-middle collapsed" data-toggle="collapse" data-target="#id-{{tutorial.id}}" aria-expanded="true" aria-controls="collapseTwo">
+                                    {{tutorial.titulo}}
+                                </h6>
+                            </div>
+                        </div>
                     </div>
                     <div class="collapse" id="id-{{tutorial.id}}" aria-labelledby="{{tutorial.id}}" data-parent="#faqAccordion">
                         <div class="card-body">
@@ -77,7 +84,9 @@
                         </div>
                     </div>
                 </div>
-                <hr/>
+                <div class="mb-5">
+                    <hr/>
+                </div>
                 {% endif %}
                 {% endfor %}
             </div>
