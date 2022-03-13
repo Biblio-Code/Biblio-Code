@@ -6,6 +6,10 @@ kernel:
     resource: ../src/Kernel.php
     type: annotation
 
+index:
+    path: /
+    controller: App\Controller\BiblioCodeController::verIndex
+
 formulario:
     path: /formulario
     controller: App\Controller\BiblioCodeController::verFormulario
@@ -14,13 +18,14 @@ tablaTutoriales:
     path: /tutoriales
     controller: App\Controller\BiblioCodeController::verTablaTutoriales
 
-jsonTutoriales:
-    path: /jsonTutoriales
-    controller: App\Controller\BiblioCodeController::jsonTutoriales
+tutorialDatos:
+    path: /api/tutorial/datos
+    controller: App\Controller\TutorialController::getAllDatos
 
-index:
-    path: /
-    controller: App\Controller\BiblioCodeController::verIndex
+apiIndex:
+    path: /api
+    controller: App\Controller\TutorialController::index
+    methods: ["GET"]
 
 verTutorial:
     path: /tutorial/{id}
