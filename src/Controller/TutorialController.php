@@ -85,10 +85,18 @@ class TutorialController extends AbstractController
                 'error' => 'Tutorial not found'
             ], 404);
         }
-        $tutorial->setTitulo($request->request->get("titulo"));
-        $tutorial->setLenguaje($request->request->get("lenguaje"));
-        $tutorial->setTextoTutorial($request->request->get("texto"));
-        $tutorial->setCodigo($request->request->get("codigo"));
+        if ($request->request->get("titulo") != null) {
+            $tutorial->setTitulo($request->request->get("titulo"));
+        }
+        if ($request->request->get("lenguaje") != null) {
+            $tutorial->setLenguaje($request->request->get("lenguaje"));
+        }
+        if ($request->request->get("texto") != null) {
+            $tutorial->setTextoTutorial($request->request->get("texto"));
+        }
+        if ($request->request->get("codigo") != null) {
+            $tutorial->setCodigo($request->request->get("codigo"));
+        }
         $entityManager->flush();
         $result = new \stdClass();
         $result->id = $tutorial->getId();
@@ -133,7 +141,7 @@ class TutorialController extends AbstractController
             $id = $tutorial->getId();
             $titulo = $tutorial->getTitulo();
             $lenguaje = $tutorial->getLenguaje();
-            $url = "<a href='/tutorial/".$id."'>Click aquí</a>";
+            $url = "<a href='/tutorial/" . $id . "'>Click aquí</a>";
 
             array_push($result, $id);
             array_push($result, $titulo);

@@ -12,21 +12,12 @@ class BiblioCodeController extends AbstractController
 
     function verFormulario(ManagerRegistry $doctrine)
     {
+        $usuario = $this->getUser();
         $comunidades = $doctrine->getRepository(Comunidad::class)->findAll();
         $provincias = $doctrine->getRepository(Provincia::class)->findAll();
         $municipios = $doctrine->getRepository(Municipio::class)->findAll();
 
-        if (!$comunidades) {
-            throw $this->createNotFoundException('No comunidad found');
-        }
-        if (!$provincias) {
-            throw $this->createNotFoundException('No provincia found');
-        }
-        if (!$municipios) {
-            throw $this->createNotFoundException('No municipio found');
-        }
-
-        return $this->render('formularioContacto.html.twig', array('comunidades' => $comunidades, 'provincias' => $provincias, 'municipios' => $municipios)); 
+        return $this->render('formularioContacto.html.twig', array('comunidades' => $comunidades, 'provincias' => $provincias, 'municipios' => $municipios, 'usuario' => $usuario)); 
 
      }
 
@@ -39,8 +30,9 @@ class BiblioCodeController extends AbstractController
 
     function verTutorial(ManagerRegistry $dm, $id)
     {
+        $usuario = $this->getUser();
         $tutorial = $dm->getRepository(Tutorial::class)->find($id);
-        return $this->render('verTutorial.twig', ['tutorial' => $tutorial]);
+        return $this->render('verTutorial.twig', ['tutorial' => $tutorial, 'usuario' => $usuario]);
     }
 
     public function logout(): void
@@ -50,7 +42,8 @@ class BiblioCodeController extends AbstractController
 
     function verTablaTutoriales()
     {
-        return $this->render('tablaTutoriales.html.twig'); 
+        $usuario = $this->getUser();
+        return $this->render('tablaTutoriales.html.twig', ['usuario' => $usuario]); 
      }
 }
 
