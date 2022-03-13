@@ -22,11 +22,6 @@ tutorialDatos:
     path: /api/tutorial/datos
     controller: App\Controller\TutorialController::getAllDatos
 
-apiIndex:
-    path: /api
-    controller: App\Controller\TutorialController::index
-    methods: ["GET"]
-
 verTutorial:
     path: /tutorial/{id}
     controller: App\Controller\BiblioCodeController::verTutorial
