@@ -2,14 +2,15 @@
 
 {% block titulo %}Formulario de Contacto {{ parent() }}{% endblock %}
 {% block main %}
-	<hr>
 	<div class="container-fluid">
 		<div class="row">
-			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-				<h2>Formulario de contacto</h2>
-				<hr>
-				<form role="form" id="register-form" action="{{path("formulario")}}" method="POST">
+			<main role="main">
+				<br/>
+				<h2 class="text-center">Formulario de contacto</h2>
+				
+				<form role="form" id="register-form" action="{{path("formulario")}}" method="POST" class="mx-4">
 
+					<hr>
 					<div class="form-body">
 
 						<input type="hidden" value="0" id="id" name="id"/>
@@ -143,17 +144,12 @@
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
-
-
+					<div class="form-footer mb-5">
+						<button type="submit" class="btn btn-primary">Enviar Datos</button>
+						&nbsp;
+						<button type="reset" name="volver" class="btn btn-danger">Borrar todo</button>
+					</div>
 				</div>
-
-				<hr>
-				<div class="form-footer">
-					<button type="submit" class="btn btn-primary">Enviar Datos</button>
-					&nbsp;
-					<button type="reset" name="volver" class="btn btn-danger">Borrar todo</button>
-				</div>
-
 			</form>
 		</main>
 	</div>

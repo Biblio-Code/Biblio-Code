@@ -123,6 +123,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-35%, -170%);
+    font-weight: 800;
+    font-family: sans-serif,monospace;
 }
 
 .arrow-down{
