@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block titulo %}Formulario de Contacto -{{ parent() }}{% endblock %}
+{% block titulo %}Formulario de Contacto -{{ parent() }}
+{% endblock %}
 {% block main %}
 	<hr>
 	<div class="container-fluid">
@@ -100,18 +101,18 @@
 							<span class="help-block" id="error"></span>
 						</div>
 						<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-envelope"></span>
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</div>
+								<label class="form-control">Municipio</label>
+								<select name="municipio" class="form-control">
+									<option value="">Seleccione...</option>
+									{% for municipio in municipios %}
+										<option value="{{municipio.id}}">{{municipio.municipio}}</option>
+									{% endfor %}
+								</select>
 							</div>
-							<label class="form-control">Municipio</label>
-							<select name="municipio" class="form-control">
-								<option value="">Seleccione...</option>
-								{% for municipio in municipios %}
-									<option value="{{municipio.id}}">{{municipio.municipio}}</option>
-								{% endfor %}
-							</select>
-						</div>
 						</div>
 						<span class="help-block" id="error"></span>
 					</div>
@@ -149,7 +150,7 @@
 
 				<hr>
 				<div class="form-footer">
-					<button type="submit" class="btn btn-primary">Enviar Datos</button>
+					<button type="submit" class="btn btn-primary" id="enviar">Enviar Datos</button>
 					&nbsp;
 					<button type="reset" name="volver" class="btn btn-danger">Borrar todo</button>
 				</div>
@@ -185,13 +186,13 @@ $.validator.addMethod("validapellidos", function (value, element) {
 return this.optional(element) || apellidosregex.test(value);
 });
 
-/*// PatrÃ³n validaciÃ³n país
+
 var paisregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
 $.validator.addMethod("validpais", function (value, element) {
 return this.optional(element) || paisregex.test(value);
 });
-
+/*
 // PatrÃ³n validaciÃ³n comunidad
 var comunidadregex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/;
 
@@ -268,7 +269,7 @@ validcodpostal: true
 pais: {
 required: true,
 validpais: true
-},/*
+}, /*
 comunidad: {
 required: true,
 validcomunidad: true
@@ -317,7 +318,7 @@ validcodpostal: "Por favor, introduce un código postal válido."
 pais: {
 required: "Por favor, indique un país.",
 validpais: "Solo se permiten letras y espacios en blancos."
-},/*
+}, /*
 comunidad: {
 required: "Por favor, indique una comunidad.",
 validcomunidad: "Solo se permiten letras y espacios en blancos."
@@ -353,20 +354,13 @@ $(element).closest('.form-group').find('.help-block').html('');
 },
 submitHandler: function (form) {
 form.submit();
-alert('ok');
+window.alert("¡Gracias! Su formulario se ha enviado correctamente.");
 }
 });
 })
 </script>
 <script>
-	feather.replace()
-
-$('document').ready(function () {
-
-$('#volver').on('click', function () {
-document.location.href = '';
-});
-
+	$('document').ready(function () {
 
 $.ajax({
 type: "GET",
@@ -378,7 +372,7 @@ $('#apellidos').val(data["apellidos"]);
 $("#nif").val(data["nif"]);
 $('#direccion').val(data["direccion"]);
 $('#codpostal').val(data["codpostal"]);
-$('#pais').val(data["pais"]);/*
+$('#pais').val(data["pais"]); /*
 $('#comunidad').val(data["comunidad"]);
 $('#provincia').val(data["provincia"]);
 $('#municipio').val(data["municipio"]);*/

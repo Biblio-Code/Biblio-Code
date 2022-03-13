@@ -14,6 +14,18 @@ formulario:
     path: /formulario
     controller: App\Controller\BiblioCodeController::verFormulario
 
+grafica:
+    path: /grafica
+    controller: App\Controller\BiblioCodeController::verGraficaTutoriales
+
+graficaDatosTitulo:
+    path: /grafica/datos
+    controller: App\Controller\BiblioCodeController::getAllDatosTitulo
+
+graficaDatosLenguaje:
+    path: /grafica/lenguaje
+    controller: App\Controller\BiblioCodeController::getAllDatosLenguaje
+
 tablaTutoriales:
     path: /tutoriales
     controller: App\Controller\BiblioCodeController::verTablaTutoriales
