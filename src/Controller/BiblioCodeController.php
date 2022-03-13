@@ -62,7 +62,8 @@ class BiblioCodeController extends AbstractController
 
     function verGraficaTutoriales()
     {
-        return $this->render('grafica.html.twig');
+        $usuario = $this->getUser();
+        return $this->render('grafica.html.twig', ['usuario' => $usuario]);
     }
 
     function getAllDatosTitulo(ManagerRegistry $doctrine)
