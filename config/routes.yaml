@@ -14,6 +14,10 @@ formulario:
     path: /formulario
     controller: App\Controller\BiblioCodeController::verFormulario
 
+quienessomos:
+    path: /sobreNosotros
+    controller: App\Controller\BiblioCodeController::verQuienessomos
+
 grafica:
     path: /grafica
     controller: App\Controller\BiblioCodeController::verGraficaTutoriales

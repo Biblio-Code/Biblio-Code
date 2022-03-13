@@ -56,8 +56,8 @@ class BiblioCodeController extends AbstractController
     function verTablaTutoriales()
     {
         $usuario = $this->getUser();
-        return $this->render('tablaTutoriales.html.twig', ['usuario' => $usuario]); 
-     }
+        return $this->render('tablaTutoriales.html.twig', ['usuario' => $usuario]);
+    }
 
 
     function verGraficaTutoriales()
@@ -116,5 +116,11 @@ class BiblioCodeController extends AbstractController
             array_push($data->data, $result);
         }
         return new JsonResponse($data);
+    }
+
+    function verQuienessomos()
+    {
+        $usuario = $this->getUser();
+        return $this->render('sobreNosotros.html.twig', ['usuario' => $usuario]);
     }
 }
