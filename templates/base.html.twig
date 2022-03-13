@@ -65,8 +65,15 @@
 				<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
 					<div class="sb-sidenav-menu">
 						<div class="nav">
-							<div class="sb-sidenav-menu-heading">Biblio Code</div>
-							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+							<div class="sb-sidenav-menu-heading">Tutoriales</div>
+							<a class="nav-link" href="{{ path('tablaTutoriales') }}">
+								<div class="sb-nav-link-icon">
+									<i class="fas fa-book-open"></i>
+								</div>
+								Todos los Tutoriales
+							</a>
+                            <div class="sb-sidenav-menu-heading">Contacta con nosotros</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
 								<div class="sb-nav-link-icon">
 									<i class="fas fa-genderless"></i>
 								</div>
@@ -80,13 +87,6 @@
 									<a class="nav-link" href="{{ path('formulario') }}">Formulario Contacto</a>
 								</nav>
 							</div>
-							<div class="sb-sidenav-menu-heading">Tutoriales</div>
-							<a class="nav-link" href="{{ path('tablaTutoriales') }}">
-								<div class="sb-nav-link-icon">
-									<i class="fas fa-book-open"></i>
-								</div>
-								Todos los Tutoriales
-							</a>
 							<div class="sb-sidenav-menu-heading">Otros</div>
 							<a class="nav-link" href="/grafica">
 								<div class="sb-nav-link-icon">
