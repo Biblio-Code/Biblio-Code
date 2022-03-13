@@ -38,6 +38,7 @@
 					</a>
 				{% endif %}
 			</form>
+			{% if (usuario.username is defined) %}
 			<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,6 +60,7 @@
 					</ul>
 				</li>
 			</ul>
+			{% endif %}
 		</nav>
 		<div id="layoutSidenav">
 			<div id="layoutSidenav_nav">
@@ -114,11 +116,7 @@
 			</div>
 			<div id="layoutSidenav_content" id="div-main">
 				<main>
-					<div class="container-fluid p-3">
-						{% block main %}
-							bloque main
-						{% endblock %}
-					</div>
+					{% block main %}{% endblock %}
 				</main>
 				<footer id="footer">
 					<div class="container">
