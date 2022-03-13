@@ -10,7 +10,7 @@
 	<meta content="Proyecto Biblio-Code" name="description">
 	<meta content="html, cabeceras, etiquetas, estilos, párrafos" name="keywords">
     <meta name="google-signin-client_id" content="GO_ID">
-    <title>{% block titulo %}- Biblio-Code{% endblock %}</title>
+    <title>{% block titulo %} - Biblio-Code{% endblock %}</title>
 	{% block stylesheets %}{% endblock %}
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -122,13 +122,9 @@
         </div>
         <div id="layoutSidenav_content" id="div-main">
             <main>
-                <div class="container-fluid p-3">
-					{% block main %}
-						bloque main
-					{% endblock %}
-                </div>
+				{% block main %}{% endblock %}
             </main>
-            <footer id="footer">
+            <footer id="footer mt-6">
                     <div class="container">
                             <div class="text-center p-2">
                                 Copyright © {{ "now"|date("Y") }} 
@@ -148,7 +144,6 @@
             </footer>
         </div>
     </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
