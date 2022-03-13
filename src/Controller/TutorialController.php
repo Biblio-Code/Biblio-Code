@@ -120,7 +120,6 @@ class TutorialController extends AbstractController
         $entityManager->remove($tutorial);
         $entityManager->flush();
 
-        // Devuelve una respuesta vacia
         return new JsonResponse(null, 204);
     }
 
