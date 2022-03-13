@@ -49,7 +49,7 @@ https://biblio-code.herokuapp.com/
 - [X] __RA1__: Iniciativa emprendedora, ideación y  prototipados de la idea. Actitudes personales y profesionales (fase I del proyecto de empresa)
 - [X] __RA2__: Análisis del entorno de una actividad. (Fase II Del proyecto de empresa)
 - [X] __RA3__: Puesta en marcha de una empresa. Determinación del mercado, elementos de marketing, forma jurídica y obligaciones legales (Fase lV y V del plan de empresa) 
-- [ ] __RA4__: Gestión administrativa y económica-financiera (fase VI del proyecto de empresa). 
+- [X] __RA4__: Gestión administrativa y económica-financiera (fase VI del proyecto de empresa). 
 
 ## Requisitos Diseño de Interfaces Web
 
