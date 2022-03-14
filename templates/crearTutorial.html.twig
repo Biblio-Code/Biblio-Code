@@ -6,25 +6,28 @@
 <div class="container-fluid text-center">
     {{ form_start(form) }}
     <h1 class="mt-4">Crea un Tutorial</h1>
-    <hr class="col-10 mx-auto">
     <br/>
-    <div>{{ form_label(form.titulo, 'Título:', {'label_attr': {'class': 'alert'}})}}</div>
-	<div>{{ form_widget(form.titulo, {'attr': {'placeholder': 'Escribe aquí el título'}}) }}</div>
+    <div class="row col-10 mx-auto">
+            <div class="col-6">
+                <div>{{ form_widget(form.titulo, {'attr': {'placeholder': 'Escribe aquí el título...', 'class': 'form-control border-dark'}})}}</div>
+            </div>
+            <div class="col-6">
+                <div>{{ form_widget(form.lenguaje, {'attr': {'placeholder': 'Escribe aquí el lenguaje...', 'class': 'form-control border-dark'}}) }}</div>
+            </div>
+    </div>
+    <div class="row col-10 mx-auto mt-4">
+            <div class="col-6">
+                <div>{{ form_widget(form.codigo, {'attr': {'placeholder': 'Escribe aquí el código...', 'class': 'form-control border-dark', 'rows': '15'}}) }}</div>
+            </div>
+            <div class="col-6">
+                <div>{{ form_widget(form.textoTutorial, {'attr': {'placeholder': 'Escribe aquí el texto del tutorial...', 'class': 'form-control border-dark', 'rows': '15'}}) }}</div>
+            </div>
+    </div>
     <br/>
-    <div>{{ form_label(form.lenguaje, 'Lenguaje:', {'label_attr': {'class': 'alert'}})}}</div>
-	<div>{{ form_widget(form.lenguaje, {'attr': {'placeholder': 'Escribe aquí el lenguaje'}}) }}</div>
-    <br/>
-    <div>{{ form_label(form.codigo, 'Código:', {'label_attr': {'class': 'alert'}})}}</div>
-	<div>{{ form_widget(form.codigo, {'attr': {'placeholder': 'Escribe aquí el código'}}) }}</div>
-    <br/>
-    <div>{{ form_label(form.textoTutorial, 'Guía:', {'label_attr': {'class': 'alert'}})}}</div>
-	<div>{{ form_widget(form.textoTutorial, {'attr': {'placeholder': 'Escribe aquí la guía'}}) }}</div>
-    <br/>
-    {{ form_row(form.save) }}
-    <br/>
+    <div>{{ form_widget(form.save, {'attr': {'class': 'btn btn-outline-dark mt-3'}})}}</div>
     {{ form_errors(form) }}
+    <br/>
 {{ form_end(form) }}
 </div>
 {% endblock %}
-{% block javascripts %}
-{% endblock %}
+{% block javascripts %}{% endblock %}
