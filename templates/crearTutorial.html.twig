@@ -6,14 +6,19 @@
 <div class="container-fluid text-center">
     {{ form_start(form) }}
     <h1 class="mt-4">Crea un Tutorial</h1>
+    <hr class="col-10 mx-auto">
     <br/>
-    {{ form_row(form.titulo) }}
+    <div>{{ form_label(form.titulo, 'Título:', {'label_attr': {'class': 'alert'}})}}</div>
+	<div>{{ form_widget(form.titulo, {'attr': {'placeholder': 'Escribe aquí el título'}}) }}</div>
     <br/>
-    {{ form_row(form.lenguaje) }}
+    <div>{{ form_label(form.lenguaje, 'Lenguaje:', {'label_attr': {'class': 'alert'}})}}</div>
+	<div>{{ form_widget(form.lenguaje, {'attr': {'placeholder': 'Escribe aquí el lenguaje'}}) }}</div>
     <br/>
-    {{ form_row(form.codigo) }}
+    <div>{{ form_label(form.codigo, 'Código:', {'label_attr': {'class': 'alert'}})}}</div>
+	<div>{{ form_widget(form.codigo, {'attr': {'placeholder': 'Escribe aquí el código'}}) }}</div>
     <br/>
-    {{ form_row(form.textoTutorial) }}
+    <div>{{ form_label(form.textoTutorial, 'Guía:', {'label_attr': {'class': 'alert'}})}}</div>
+	<div>{{ form_widget(form.textoTutorial, {'attr': {'placeholder': 'Escribe aquí la guía'}}) }}</div>
     <br/>
     {{ form_row(form.save) }}
     <br/>
