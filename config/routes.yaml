@@ -43,6 +43,10 @@ verTutorial:
     controller: App\Controller\BiblioCodeController::verTutorial
     methods: ["GET"]
 
+crearTutorial:
+    path: /tutorial
+    controller: App\Controller\TutorialController::crearTutorial
+
 getTutorial:
     path: /api/tutorial/{id}
     controller: App\Controller\TutorialController::getTutorial
