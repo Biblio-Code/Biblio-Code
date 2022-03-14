@@ -10,7 +10,7 @@
 		<meta content="Proyecto Biblio-Code" name="description">
 		<meta content="html, cabeceras, etiquetas, estilos, párrafos" name="keywords">
 		<meta name="google-signin-client_id" content="GO_ID">
-		<link rel="icon" href="images/icon.png" class="rounded">
+		<link rel="icon" href="{{ asset('images/icon.png') }}">
 		<title>
 			{% block titulo %}- Biblio-Code
 			{% endblock %}
@@ -28,7 +28,7 @@
 
 	<body class="sb-nav-fixed">
 		<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-			<a class="navbar-brand ps-3" href="{{ path('index') }}"><img src="{{ absolute_url('/images/icon-white.png') }}" alt=""> Biblio-Code</a>
+			<a class="navbar-brand ps-3" href="{{ path('index') }}"><img src="{{ asset('/images/icon-white.png') }}" alt=""> Biblio-Code</a>
 			<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="">
 				<i class="fas fa-bars"></i>
 			</button>

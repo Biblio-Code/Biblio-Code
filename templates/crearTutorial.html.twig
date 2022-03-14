@@ -1,9 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block titulo %} Creando Tutorial {{ parent() }} {% endblock %}
+{% block titulo %}Creando Tutorial {{ parent() }}{% endblock %}
+{% block stylesheets %}{% endblock %}
 {% block main %}
-    <h1>Crea un Tutorial</h1>
+<div class="container-fluid text-center">
     {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <h1 class="mt-4">Crea un Tutorial</h1>
+    <br/>
+    {{ form_row(form.titulo) }}
+    <br/>
+    {{ form_row(form.lenguaje) }}
+    <br/>
+    {{ form_row(form.codigo) }}
+    <br/>
+    {{ form_row(form.textoTutorial) }}
+    <br/>
+    {{ form_row(form.save) }}
+    <br/>
+    {{ form_errors(form) }}
+{{ form_end(form) }}
+</div>
+{% endblock %}
+{% block javascripts %}
 {% endblock %}
