@@ -37,6 +37,11 @@ class Tutorial
      */
     private $textoTutorial;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $autor;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Tutorial
     public function setTextoTutorial(?string $textoTutorial): self
     {
         $this->textoTutorial = $textoTutorial;
+
+        return $this;
+    }
+
+    public function getAutor(): ?string
+    {
+        return $this->autor;
+    }
+
+    public function setAutor(string $autor): self
+    {
+        $this->autor = $autor;
 
         return $this;
     }
