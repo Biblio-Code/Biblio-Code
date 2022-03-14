@@ -48,7 +48,7 @@ class BiblioCodeController extends AbstractController
     {
         $usuario = $this->getUser();
         $tutorial = $dm->getRepository(Tutorial::class)->find($id);
-        return $this->render('verTutorial.twig', ['tutorial' => $tutorial, 'usuario' => $usuario]);
+        return $this->render('verTutorial.html.twig', ['tutorial' => $tutorial, 'usuario' => $usuario]);
     }
 
     public function logout(): void
