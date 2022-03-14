@@ -34,7 +34,7 @@
 			</button>
 			<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
 				{% if (usuario.username is not defined) %}
-					<a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}" onload="onSignIn" data-onsuccess="onSignIn">
+					<a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">
 						<button type="button" class="btn btn-outline-light">Iniciar sesión con Google</button>
 					</a>
 				{% endif %}

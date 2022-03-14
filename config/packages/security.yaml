@@ -23,9 +23,9 @@ security:
             oauth:
                 resource_owners:
                     google: "/login/check-google"
-                login_path:   /login
+                login_path:   /
                 use_forward:  false
-                failure_path: /login
+                failure_path: /
 
                 oauth_user_provider:
                     service: hwi_oauth.user.provider
@@ -40,10 +40,10 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
-    access_control:
-        - { path: ^/, roles: PUBLIC_ACCESS }
-        - { path: ^/login, roles: PUBLIC_ACCESS }
-        - { path: ^/tutorial, roles: ROLE_USER } // force login
+    # access_control:
+    #     - { path: ^/, roles: PUBLIC_ACCESS }
+    #     - { path: ^/login, roles: PUBLIC_ACCESS }
+    #     - { path: ^/tutorial, roles: ROLE_USER } // force login
 
 when@test:
     security:

@@ -101,7 +101,7 @@ class BiblioCodeController extends AbstractController
         }
 
         return $this->render('crearTutorial.html.twig', array(
-            'form' => $form->createView(), ['usuario' => $usuario]
+            'form' => $form->createView(), 'usuario' => $usuario
         ));
     }
 

@@ -3,6 +3,8 @@
 {% block titulo %}Creando Tutorial {{ parent() }}{% endblock %}
 {% block stylesheets %}{% endblock %}
 {% block main %}
+{% if (usuario.username is defined) and (usuario.username is not null) %}
+							
 <div class="container-fluid text-center">
     {{ form_start(form) }}
     <h1 class="mt-4">Crea un Tutorial</h1>
@@ -29,5 +31,12 @@
     <br/>
 {{ form_end(form) }}
 </div>
+{% endif %}
+{% if (usuario.username is not defined) %}
+<div class="container-fluid mt-5">
+<h2 class="text-center">Inicia sesión con google para poder crear un tutorial</h2>
+<h3 class="text-center"><a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">Click aquí</a></h3>
+</div>
+{% endif %}
 {% endblock %}
 {% block javascripts %}{% endblock %}
