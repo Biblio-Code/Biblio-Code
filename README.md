@@ -4,7 +4,7 @@
 Este es un proyecto realizado en IES Luis Vélez de Guevara de Écija realizado por tres alumnos de 2ºDAW. Consiste en realizar una página web para la visualización de distintos tutoriales de lenguajes de programación, además dispone la funcionalidad de implementar tus propios tutoriales a la página iniciando sesión con google.
 Tambien disponemos de una API REST con la que puedes ver los tutoriales, añadir, modificar o borrar.
 Aqui tienes una coleccion de postman para que veas todo lo que puedes hacer con la api.
-https://github.com/AlbertoArraz/tweetfony/blob/main/tests/API%20Tweetfony.postman_collection.json
+https://github.com/Biblio-Code/Biblio-Code/blob/master/public/API%20Tutorial.postman_collection.json
 
 Un correo de prueba para probar el inicio de sesion con google
 bibliocode.prueba@gmail.com
