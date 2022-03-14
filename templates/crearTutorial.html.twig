@@ -1,12 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block titulo %} Creando Tutorial {{ parent() }} {% endblock %}
-{% block stylesheets %}{% endblock %}
 {% block main %}
     <h1>Crea un Tutorial</h1>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
-{% endblock %}
-{% block javascripts %}
 {% endblock %}
