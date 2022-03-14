@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 // /src/Controller/TutorialController.php
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Tutorial;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
 // ...
 
 class TutorialController extends AbstractController
@@ -76,13 +77,13 @@ class TutorialController extends AbstractController
         return new JsonResponse($result, 201);
     }
 
-    function putTutorial(ManagerRegistry $doctrine, Request $request, $id)
+    public function putTutorial(ManagerRegistry $doctrine, Request $request, $id)
     {
         $entityManager = $doctrine->getManager();
         $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
         if ($tutorial == null) {
             return new JsonResponse([
-                'error' => 'Tutorial not found'
+                'error' => 'Tutorial not found',
             ], 404);
         }
         if ($request->request->get("titulo") != null) {
@@ -107,13 +108,13 @@ class TutorialController extends AbstractController
         return new JsonResponse($result);
     }
 
-    function deleteTutorial(ManagerRegistry $doctrine, $id)
+    public function deleteTutorial(ManagerRegistry $doctrine, $id)
     {
         $entityManager = $doctrine->getManager();
         $tutorial = $doctrine->getRepository(Tutorial::class)->find($id);
         if ($tutorial == null) {
             return new JsonResponse([
-                'error' => 'Tutorial not found'
+                'error' => 'Tutorial not found',
             ], 404);
         }
 
@@ -123,7 +124,7 @@ class TutorialController extends AbstractController
         return new JsonResponse(null, 204);
     }
 
-    function getAllDatos(ManagerRegistry $doctrine)
+    public function getAllDatos(ManagerRegistry $doctrine)
     {
         $tutoriales = $doctrine->getRepository(Tutorial::class)->findAll();
 
@@ -149,5 +150,10 @@ class TutorialController extends AbstractController
             array_push($data->data, $result);
         }
         return new JsonResponse($data);
+    }
+    public function crearTutorial(ManagerRegistry $doctrine)
+    {
+        $usuario = $this->getUser();
+        return $this->render('crearTutorial.html.twig', ['usuario' => $usuario]);
     }
 }
