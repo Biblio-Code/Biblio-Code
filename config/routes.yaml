@@ -46,10 +46,6 @@ verTutorial:
     path: /tutorial/{id}
     controller: App\Controller\BiblioCodeController::verTutorial
 
-crearTutorial:
-    path: /tutorial
-    controller: App\Controller\TutorialController::crearTutorial
-
 getTutorial:
     path: /api/tutorial/{id}
     controller: App\Controller\TutorialController::getTutorial

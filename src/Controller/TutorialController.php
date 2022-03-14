@@ -151,9 +151,4 @@ class TutorialController extends AbstractController
         }
         return new JsonResponse($data);
     }
-    public function crearTutorial(ManagerRegistry $doctrine)
-    {
-        $usuario = $this->getUser();
-        return $this->render('crearTutorial.html.twig', ['usuario' => $usuario]);
-    }
 }
