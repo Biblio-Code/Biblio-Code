@@ -22,6 +22,10 @@ grafica:
     path: /grafica
     controller: App\Controller\BiblioCodeController::verGraficaTutoriales
 
+crearTutorial:
+    path: /tutorial/crear
+    controller: App\Controller\BiblioCodeController::verCrearTutorial
+
 graficaDatosTitulo:
     path: /grafica/datos
     controller: App\Controller\BiblioCodeController::getAllDatosTitulo
@@ -41,7 +45,6 @@ tutorialDatos:
 verTutorial:
     path: /tutorial/{id}
     controller: App\Controller\BiblioCodeController::verTutorial
-    methods: ["GET"]
 
 getTutorial:
     path: /api/tutorial/{id}

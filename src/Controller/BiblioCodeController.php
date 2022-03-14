@@ -8,8 +8,11 @@ use App\Entity\Provincia;
 use App\Entity\Municipio;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 
 class BiblioCodeController extends AbstractController
 {
@@ -64,6 +67,42 @@ class BiblioCodeController extends AbstractController
     {
         $usuario = $this->getUser();
         return $this->render('grafica.html.twig', ['usuario' => $usuario]);
+    }
+
+    public function verCrearTutorial(ManagerRegistry $doctrine,Request $request)
+    {
+        $usuario = $this->getUser();
+        $tutorial = new Tutorial();
+
+
+        $form = $this->createFormBuilder($tutorial)
+            ->add('titulo', TextType::class)
+            ->add('lenguaje', TextType::class)
+            ->add('codigo', TextareaType::class, array('required' => false))
+            ->add('textoTutorial', TextareaType::class, array('required' => false))
+            ->add(
+                'save',
+                SubmitType::class,
+                array('label' => 'Añadir Tutorial')
+            )
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $tutorial = $form->getData();
+            $entityManager = $doctrine->getManager();
+
+            $entityManager->persist($tutorial);
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('tablaTutoriales');
+        }
+
+        return $this->render('crearTutorial.html.twig', array(
+            'form' => $form->createView(), ['usuario' => $usuario]
+        ));
     }
 
     function getAllDatosTitulo(ManagerRegistry $doctrine)
