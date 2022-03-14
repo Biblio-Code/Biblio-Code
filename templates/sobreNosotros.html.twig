@@ -1,28 +1,36 @@
 {% extends 'base.html.twig' %}
-{% block titulo %} Quiénes somos {{ parent() }} {% endblock %}
+{% block titulo %}
+	Quiénes somos
+	{{ parent() }}
+{% endblock %}
 {% block main %}
-<div class="container-fluid">
-	<div class="row text-justify">
-		<h2 class="mt-4 text-center">Quiénes somos</h2>
-		<div class="form-group col-8 mx-auto">
-        <p>Somos tres alumnos de 2ºDAW:</p>
-        <ul>
-            <li>Laura Serrano Ruiz</li>
-            <li>Alberto Arraz Alé</li>
-            <li>Salvador Delgado Bolancé</li>
-        </ul>
-        <p>Con motivo de realizar nuestro último proyecto grupal, hemos desarollado esta página web que creemos que será de muchísima utilidad para cualquier persona que este interesada en el mundo de la programación web.</p>
-        <p>Estamos estudiando un cliclo superior de Desarrollo de Aplicaciones Web en la localidad de Écija (Sevilla) en el instituto IES Luis Vélez de Guevara.</p>
-        <p>Podrás encontrarnos aquí:</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.210485794489!2d-5.0850312573054115!3d37.55010441906155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd12caea8e08f2bb%3A0x4dd34539e2aa7b93!2sI.E.S.%20Luis%20V%C3%A9lez%20de%20Guevara!5e0!3m2!1ses!2ses!4v1647201039949!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-		<p class="my-4">Si tienes cualquier duda puedes contactar con nosotros mediante el siguiente formulario de contacto <a href="/formulario">pincha aquí</a> o mediante el siguiente número de teléfono: <a href="tel:+349009009009">9009009009</a></p>
-        </div>
-    </div>
-</div>
+	<div class="container-fluid">
+		<div class="row text-justify">
+			<h2 class="mt-4 text-center">Quiénes somos</h2>
+            <hr class="col-10 mx-auto">
+			<div class="form-group col-8 mx-auto">
+				<p>Somos tres alumnos de 2ºDAW:</p>
+				<ul>
+					<li>Laura Serrano Ruiz</li>
+					<li>Alberto Arraz Alé</li>
+					<li>Salvador Delgado Bolancé</li>
+				</ul>
+				<p>Con motivo de realizar nuestro último proyecto grupal, hemos desarollado esta página web que creemos que será de muchísima utilidad para cualquier persona que este interesada en el mundo de la programación web.</p>
+				<p>Estamos estudiando un cliclo superior de Desarrollo de Aplicaciones Web en la localidad de Écija (Sevilla) en el instituto IES Luis Vélez de Guevara.</p>
+				<p>Podrás encontrarnos aquí:</p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.210485794489!2d-5.0850312573054115!3d37.55010441906155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd12caea8e08f2bb%3A0x4dd34539e2aa7b93!2sI.E.S.%20Luis%20V%C3%A9lez%20de%20Guevara!5e0!3m2!1ses!2ses!4v1647201039949!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				<p class="my-4">Si tienes cualquier duda puedes contactar con nosotros mediante el siguiente formulario de contacto
+					<a href="/formulario">pincha aquí</a>
+					o mediante el siguiente número de teléfono:
+					<a href="tel:+349009009009">9009009009</a>
+				</p>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 {% block javascripts %}
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" language="javascript" src="{{ asset('js/datatables/datatables.min.js')}}"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="{{ asset('js/datatables/datatables.min.js')}}"></script>
 
 {% endblock %}

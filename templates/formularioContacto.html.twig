@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block titulo %}Formulario de Contacto {{ parent() }}{% endblock %}
+{% block titulo %}Formulario de Contacto
+	{{ parent() }}
+{% endblock %}
 {% block main %}
 	<div class="container-fluid">
 		<div class="row">
 			<main role="main">
 				<br/>
 				<h2 class="text-center">Formulario de contacto</h2>
-				
+
 				<form role="form" id="register-form" action="{{path("formulario")}}" method="POST" class="mx-4">
 
 					<hr>
@@ -153,9 +155,8 @@
 			</form>
 		</main>
 	</div>
-</div>
-{% endblock %}{% block javascripts %}
-<script src="{{ asset('js/jquery-3.3.1.min.js')}}"> </script>
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('js/jquery.validate.min.js')}}"></script>
 <script type="text/javascript" language="javascript" src="{{ asset('js/datatables/datatables.min.js')}}"></script>
@@ -322,5 +323,4 @@ $('#id').val(data["id"]);
 }
 });
 })
-</script>
-{% endblock %}
+</script>{% endblock %}
