@@ -211,6 +211,13 @@ $.validator.addMethod("validemail", function (value, element) {
 return this.optional(element) || eregex.test(value);
 });
 
+// Patrón validación teléfono
+var telefonoregex = /^[0-9]{9,9}$/;
+
+$.validator.addMethod("validtelefono", function (value, element) {
+return this.optional(element) || telefonoregex.test(value);
+});
+
 $("#register-form").validate({
 rules: {
 nombre: {
@@ -277,6 +284,7 @@ validpais: "Solo se permiten letras y espacios en blancos."
 },
 telefono: {
 required: "Por favor, indique un teléfono.",
+validtelefono: "Por favor, introduce un teléfono",
 number: "Solo se permiten números",
 minlength: "Solo se permiten 9 números.",
 maxlength: "Solo se permiten 9 números."
