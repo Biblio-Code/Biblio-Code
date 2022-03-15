@@ -25,6 +25,7 @@
                 <div>{{ form_widget(form.textoTutorial, {'attr': {'placeholder': 'Escribe aquí el texto del tutorial...', 'class': 'form-control border-dark', 'rows': '15'}}) }}</div>
             </div>
     </div>
+    {{ form_widget(form.autor, {'attr': {'hidden':'true', 'value':'{{ usuario.username }}'}})}}
     <br/>
     <div>{{ form_widget(form.save, {'attr': {'class': 'btn btn-outline-dark mt-3'}})}}</div>
     {{ form_errors(form) }}

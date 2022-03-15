@@ -80,6 +80,7 @@ class BiblioCodeController extends AbstractController
             ->add('lenguaje', TextType::class)
             ->add('codigo', TextareaType::class, array('required' => false))
             ->add('textoTutorial', TextareaType::class, array('required' => false))
+            ->add('autor', TextType::class)
             ->add(
                 'save',
                 SubmitType::class,
